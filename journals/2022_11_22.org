@@ -1,0 +1,2 @@
+* Used Logseq seriously for the first time
+* Completed entry for [[HTTP]], [[SMTP]], [[DNS]], [[nslookup]] for the [[networking]] section.

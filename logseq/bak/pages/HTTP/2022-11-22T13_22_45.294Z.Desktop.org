@@ -1,0 +1,13 @@
+* HTTP Request
+** Format
+:PROPERTIES:
+:id: 637cca36-f3ef-43df-88f4-41472c22042a
+:END:
+| method          | space   | URL   | space | version         | carriage return | newline |
+| header          | :       | space | value | carriage return | newline         |         |
+| ...             | ...     | ...   | ...   | ...             | ..              | ...     |
+| header          | :       | space | value | carriage return | newline         |         |
+| carriage return | newline |       |       |                 |                 |         |
+| body            | body    | body  | body  | body            | body            | body    |
+| ...             | ...     | ...   | ...   | ...             | ...             | ...     |
+| body            | body    | body  | body  | body            | body            | body    |

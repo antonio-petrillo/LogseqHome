@@ -1,0 +1,6 @@
+* Autori:
+** James F. Kurose
+** Keith W. Ross
+* [[capitolo 1 RdCI][capitolo 1]]
+* Risorse:
+** Canale yoututbe di [[https://www.youtube.com/user/JimKurose][J.F.Kurose]]

@@ -1,0 +1,6 @@
+{:logseq-vim-shortcuts {:version "v0.1.16", :repo "vipzhicheng/logseq-plugin-vim-shortcuts", :effect true, :theme false}
+ :logseq-bonofix-theme {:version "v3.8.2", :repo "sansui233/logseq-bonofix-theme", :effect false, :theme true}
+ :logseq-tabs {:version "v1.18.1", :repo "pengx17/logseq-plugin-tabs", :effect true, :theme false}
+ :logseq-journals-calendar {:version "0.10.5", :repo "xyhp915/logseq-journals-calendar", :effect false, :theme false}
+ :logseq-bullet-threading {:version "v1.1.1", :repo "pengx17/logseq-plugin-bullet-threading", :effect false, :theme false}
+ :logseq-markdown-table {:version "v1.7.0", :repo "haydenull/logseq-plugin-markdown-table", :effect false, :theme false}}

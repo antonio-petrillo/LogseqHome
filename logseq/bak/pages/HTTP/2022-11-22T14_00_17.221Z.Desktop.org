@@ -1,0 +1,50 @@
+* HTTP Request
+** Format
+:LOGBOOK:
+CLOCK: [2022-11-22 Tue 14:32:12]
+:END:
+[[../assets/http_request_format.jpg][http request format]]{:height 568, :width 747}
+** Here an example:
+#+BEGIN_EXAMPLE
+GET /somdir/page.html HTTP/1.1
+Host: www.someschool.edu
+Connection: close
+User-agent: Mozilla/5.0
+Accept-language: fr
+#+END_EXAMPLE
+** Important Header Field
+*** *cookie*
+Let the user add a cookie to the request, it could be handle to keep a track of a connection (see jwt token), usually they are set by an HTTP response
+*** *If-modified-since*
+With this header is possible to create a conditional get, to keep it simple, the value for this header is a date if the requested page/resource is modified since the input value don't accept a cached value but get a /fresh/ one.
+* HTTP Response
+** Format
+[[../assets/http_response_format.jpg]]
+** Here an example
+
+#+BEGIN_EXAMPLE
+HTTP/1.1 200 OK
+Connection: close
+Date: Thu, 18 Aug 2015 15:44:04 GMT
+Server: Apache/2.2.3 (CentOS)
+Last-Modified: Tue, 18 Aug 2015 15:11:03 GMT
+Content-Length: 6821
+Content-Type: text/html
+(data data data data data .... data)
+#+END_EXAMPLE
+**
+** Important Header Fields
+*** *Set-cookie*
+Set a cookie on the user agent who made the request.
+*** *Content-Length*
+Number of byte in the response
+*** *Content-Type*
+:LOGBOOK:
+CLOCK: [2022-11-22 Tue 14:50:56]--[2022-11-22 Tue 14:50:57] =>  00:00:01
+:END:
+Specify the type of the response, i.e. ~html file~, ~image~, ~xml~ ecc...
+** Common response code
+| Code Number | Code Message | Meaning |
+| 200 | OK | Request Success |
+| 301 | Moved Permanently | Object moved to another URL|
+**
