@@ -1,4 +1,4 @@
 * #networking, #arhictecture
 * Scalability
 Compared to ~client-server~ paradigm architecture the ~P2P~ has an innate capacity to scale.
-When a new end-point connect to the network
+When a new end-point is connect to the network the network scale!
