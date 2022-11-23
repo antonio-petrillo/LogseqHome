@@ -1,3 +1,3 @@
 * #networking, #arhictecture
 * Scalability
-Compared to ~client-server~ paradigm architecture the ~P2P~ has an
+Compared to ~client-server~ paradigm architecture the ~P2P~ has an innate capacity to scale
