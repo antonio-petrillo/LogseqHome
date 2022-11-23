@@ -9,4 +9,6 @@ When a new end-point is connect to the network the network scale!
 * Type of P2P
 ** P2P  Pure
 no central server, each peer have the same role.
-**
+** P2P with Discovery Server
+Self explanatory.
+** P2P with Discovery and Lookup Server
