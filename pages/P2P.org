@@ -2,7 +2,7 @@
 * Scalability
 Compared to ~client-server~ paradigm architecture the ~P2P~ has an innate capacity to scale.
 When a new end-point is connect to the network the network scale!
-* Ea
+* Each host in the P2P
 :PROPERTIES:
 :id: 637e966c-6342-4c3c-92c4-eae528607c04
 :END:
