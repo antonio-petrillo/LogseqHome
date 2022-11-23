@@ -11,4 +11,5 @@ When a new end-point is connect to the network the network scale!
 no central server, each peer have the same role.
 ** P2P with Discovery Server
 Self explanatory.
+On a new connection from a new peer it give to the new user a list of the other users.
 ** P2P with Discovery and Lookup Server
