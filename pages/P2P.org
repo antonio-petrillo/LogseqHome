@@ -13,3 +13,4 @@ no central server, each peer have the same role.
 Self explanatory.
 On a new connection from a new peer it give to the new user a list of the other users.
 ** P2P with Discovery and Lookup Server
+Like the previous but there is another host, the Lookup Server, it is also connect to the network (hence also known by the Dic)
