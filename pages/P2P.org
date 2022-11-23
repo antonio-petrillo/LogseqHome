@@ -2,7 +2,8 @@
 * Scalability
 Compared to ~client-server~ paradigm architecture the ~P2P~ has an innate capacity to scale.
 When a new end-point is connect to the network the network scale!
-* Each host in the P2P paradigm is equipotent, there is no central server,  the book show an interesting example on a file  sharing application with [[Client-Server]] and P2P.
+* Each host in the P2P paradigm is equipotent, there is no central server,  the book ( [[Computer Networking a Top Down Approach]] ) show an interesting example on a file  sharing application with [[Client-Server]] and P2P.
 :PROPERTIES:
 :id: 637e966c-6342-4c3c-92c4-eae528607c04
 :END:
+*
