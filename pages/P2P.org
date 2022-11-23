@@ -1,2 +1,3 @@
 * #networking, #arhictecture
 * Scalability
+Compared to ~client-server~ paradigm architecture
