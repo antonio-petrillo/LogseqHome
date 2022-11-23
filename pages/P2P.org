@@ -1,2 +1,7 @@
 * #networking, #arhictecture
-*
+* :PROPERTIES:
+:id: 637e6959-dd98-46ff-99fc-282c7ab7db96
+:END:
+#+BEGIN_SRC clojure
+(+ 1 1)
+#+END_SRC
