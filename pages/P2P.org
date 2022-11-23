@@ -6,4 +6,7 @@ When a new end-point is connect to the network the network scale!
 :PROPERTIES:
 :id: 637e966c-6342-4c3c-92c4-eae528607c04
 :END:
-*
+* Type of P2P
+** P2P  Pure
+no central server, each peer have the same role.
+**
