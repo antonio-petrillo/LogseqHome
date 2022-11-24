@@ -9,7 +9,8 @@ Scheme of the communication.
 
 #+BEGIN_SRC python
 from socket import *
-serverName = ''
+serverName = 'hostname'
+serverPort = 12000
 #+END_SRC
 * TCP
 ** Server
