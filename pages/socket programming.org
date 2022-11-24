@@ -1,6 +1,6 @@
 * #programming, #networking, #TCP, #UDP
 * UDP
-Before a packet of information can be senden
+Before a packet of information can be sended on UDP w
 ** Server
 ** Client
 * TCP
