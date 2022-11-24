@@ -12,7 +12,9 @@ Usually CDNs use [[DNS]] redirect to accomplish their job.
 * Here an example
 [[../assets/CDN_example.png]]
 
-Steps' description
+Steps' description:
+Suppose NetCinema is streaming platform that use KingCDN to deliver its contents.
 1. The client visit NetCinema
 2. The client click on a link to get a resource, like [[https://en.wikipedia.org/wiki/Ghost_in_the_Shell][Ghost in the Shell]]
-3. The local [[DNS]] (or the full process, root -> TLD -> authoritative ) redirect to the authoritative
+3. The local [[DNS]] (or the full process, root -> TLD -> authoritative ) redirect to the authoritative DNS of NetCinema
+4. The authoritative DNS
