@@ -3,5 +3,5 @@
 To avoid a big central web server with all the resource, CDNs replicate the data over the network so, when a client made a request, it can be delivered by the nearest CDN.
 * Type of CDN
 ** Enter deep
-Install clusters inside the access ISPs over the world, harder to
+Install clusters inside the access ISPs over the world, harder to maintaing
 ** Bring home
