@@ -1,6 +1,6 @@
 * #programming, #networking, #TCP, #UDP
 * UDP
-Before a packet of information can be sended on UDP w
+Before a packet of information can be sended on UDP we need to add information about the port and the [[IP]] address of the receiver.
 ** Server
 ** Client
 * TCP
