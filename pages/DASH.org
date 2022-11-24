@@ -2,4 +2,4 @@
 * DASH stand for (Dynamic Adaptive Streaming over HTTP)
 Each video on the web server is encoded with different algorithm to support different download's speeds.
 When an user request a resource it select not the entire video but a little part, say a ~block~, this part is chosen based on the client download speed, it select the best encoding for it.
-When the current ~block~ is consumed it download the next one
+When the current ~block~ is consumed it download the next one, if the download's speed is changed it select the new appropriate encoding to download.
