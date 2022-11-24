@@ -9,3 +9,7 @@ Create a private network, install in this network the clusters with redundant da
 * How they work
 When a CDN receive a request it chose one of the cluster that hold the required resource (possible also near to client who made the request) it redirect the request to one of the server  in that cluster.
 Usually CDNs use [[DNS]] redirect to accomplish their job.
+* Here an example
+[[../assets/CDN_example.png]]
+
+Step
