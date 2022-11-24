@@ -12,4 +12,5 @@ Usually CDNs use [[DNS]] redirect to accomplish their job.
 * Here an example
 [[../assets/CDN_example.png]]
 
-Step
+Steps' description
+1. The client ask for a resource, like
