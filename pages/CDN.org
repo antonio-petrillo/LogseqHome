@@ -7,3 +7,4 @@ Install clusters inside the access ISPs over the world, harder to maintain but t
 ** Bring home
 Create a private network, install in this network the clusters with redundant data and the connect to the access ISP, easy to maintain, cheaper but slower in general.
 * How they work
+When a CDN receive a request it chose one of the cluster
