@@ -1,0 +1,24 @@
+* #networking, #protocols, #tool, #cli, #dns
+*
+* Description
+nslookup is a program to query Internet domain name servers aka [[DNS]], see ~man nslookup~ for more detail.
+* Some example
+#+BEGIN_SRC shell
+nslookup --type=A leonardotamiano.xyz
+*** Invalid option: -type=A
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+Name:	leonardotamiano.xyz
+Address: 35.152.66.6
+
+# Here a test with ping to double check
+
+ping -c 1 academy.leonardotamiano.xyz/
+PING academy.leonardotamiano.xyz\047 (35.152.66.6) 56(84) bytes of data.
+
+--- academy.leonardotamiano.xyz\047 ping statistics ---
+1 packets transmitted, 0 received, 100% packet loss, time 0ms
+#+END_SRC
+With both command I get the same result ~35.152.66.6~.
