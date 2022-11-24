@@ -1,2 +1,3 @@
 * #protocol, #networking
 * DASH stand for (Dynamic Adaptive Streaming over HTTP)
+Each video on the web server is encoded with different algorithm to support different
