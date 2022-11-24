@@ -40,5 +40,13 @@ clientSocket.close()
 * TCP
 ** Scheme
 Scheme for the communication
+[[../assets/tcp_programming_scheme.png]]
 ** Server
+#+BEGIN_SRC python
+
+#+END_SRC
 ** Client
+
+#+BEGIN_SRC python
+
+#+END_SRC
