@@ -16,5 +16,6 @@ Steps' description:
 Suppose NetCinema is streaming platform that use KingCDN to deliver its contents.
 1. The client visit NetCinema
 2. The client click on a link to get a resource, like [[https://en.wikipedia.org/wiki/Ghost_in_the_Shell][Ghost in the Shell]]
-3. The local [[DNS]] (or the full process, root -> TLD -> authoritative ) redirect to the authoritative DNS of NetCinema
-4. The authoritative DNS
+3. The local DNS (or the full process, root -> TLD -> authoritative ) redirect to the authoritative DNS of NetCinema
+4. The authoritative DNS redirect to KingCDN DNS
+5. KingCDN DNS return the IP to the server
