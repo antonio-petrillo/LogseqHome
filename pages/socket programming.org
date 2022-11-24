@@ -5,6 +5,19 @@ Before a packet of information can be sended on UDP we need to add information a
 Scheme of the communication.
 [[../assets/udp_programming_scheme.png]]
 ** Server
+#+begin_src python
+from socket imort *
+
+serverPort = 12000
+serverSocket = socket(AF_INET, SOCK_DGRAM)
+
+serverSocket.bind(('', serverPort)) # '' bind to localhost
+
+print("The server is ready to receive")
+
+while True:
+
+#+end_src
 ** Client
 #+BEGIN_SRC python
 from socket import *
