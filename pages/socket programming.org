@@ -39,5 +39,6 @@ clientSocket.close()
 #+END_SRC
 * TCP
 ** Scheme
+Scheme for the communication
 ** Server
 ** Client
