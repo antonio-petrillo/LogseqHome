@@ -18,17 +18,16 @@ print("The server is ready to receive")
 while True:
     message, clientAddress = serverSocket.recvfrom(2048)
     modifiedMessage = message.decode().upper()
-    print(f"Message := {modifiedMessage}\tClient := {clientAddress}")
     serverSocket.sendto(modifiedMessage.encode(), clientAddress)
 #+end_src
 ** Client
 #+BEGIN_SRC python
 from socket import *
 
-serverName = 'localhost'
+serverName = 'hostname'
 serverPort = 12000
 
-clientSocket = socket(AF_INET, SOCK_DGRAM)
+clientSocket = socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 message = input('Say something: ')
 clientSocket.sendto(message.encode(), (serverName, serverPort))
