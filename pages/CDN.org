@@ -1,3 +1,3 @@
 * #networking, #server, #cache
 * Content Delivery Network (CDN)
-To avoid a big central
+To avoid a big central web server with all the resource
