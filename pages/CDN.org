@@ -19,4 +19,4 @@ Suppose NetCinema is streaming platform that use KingCDN to deliver its contents
 3. The local DNS (or the full process, root -> TLD -> authoritative ) redirect to the authoritative DNS of NetCinema
 4. The authoritative DNS redirect to KingCDN DNS
 5. KingCDN DNS return the IP to the server that hold the request, basically the IP of the server of the CDN that contain the result
-6. The client access to the resource on the CDN
+6. The client access to the resource on the CDN, either with HTTP, DASH or whatever
