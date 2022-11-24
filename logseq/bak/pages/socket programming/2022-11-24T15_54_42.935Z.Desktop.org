@@ -6,20 +6,11 @@ Scheme of the communication.
 [[../assets/udp_programming_scheme.png]]
 ** Server
 ** Client
+
 #+BEGIN_SRC python
 from socket import *
-
 serverName = 'hostname'
 serverPort = 12000
-
-clientSocket = socket(socket.AF_INET, socket.SOCK_DGRAM)
-
-message = input('Say something: ')
-clientSocket.sendto(message.encode(), (serverName, serverPort))
-modifiedMessage, serverAddress = clientSocket.recvfrom(2048)
-
-print(modifiedMessage.decode())
-clientSocket.close()
 #+END_SRC
 * TCP
 ** Server
