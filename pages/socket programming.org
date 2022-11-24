@@ -43,10 +43,39 @@ Scheme for the communication
 [[../assets/tcp_programming_scheme.png]]
 ** Server
 #+BEGIN_SRC python
+from socket import *
 
+serverPort = 12001
+serverSocket = socket(AF_INET, SOCK_STREAM)
+serverSocket.bind(('', serverPort))
+serverSocket.listen(1)
+
+print("Server ready")
+
+while True:
+    connectionSocket, addr = serverSocket.accept()
+    sentence = connectionSocket.recv(2048).decode().upper()
+    print(f"Sentence := {sentence}\tAddr := {addr}")
+    connectionSocket.send(sentence.encode())
+    connectionSocket.close()
 #+END_SRC
 ** Client
 
 #+BEGIN_SRC python
+from socket import *
 
+serverName = 'localhost'
+serverPort = 12001
+
+clientSocket = socket(AF_INET, SOCK_STREAM)
+clientSocket.connect((serverName, serverPort))
+
+sentence = input('say something: ')
+
+clientSocket.send(sentence.encode())
+
+modifiedSentence = clientSocket.recv(2048).decode()
+print(f"from server: {modifiedSentence}")
+
+clientSocket.close()
 #+END_SRC
