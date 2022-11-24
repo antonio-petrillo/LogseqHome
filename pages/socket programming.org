@@ -6,7 +6,7 @@ Scheme of the communication.
 [[../assets/udp_programming_scheme.png]]
 ** Server
 #+begin_src python
-from socket imort *
+from socket import *
 
 serverPort = 12000
 serverSocket = socket(AF_INET, SOCK_DGRAM)
