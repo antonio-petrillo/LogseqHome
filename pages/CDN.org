@@ -15,4 +15,4 @@ Usually CDNs use [[DNS]] redirect to accomplish their job.
 Steps' description
 1. The client visit NetCinema
 2. The client click on a link to get a resource, like [[https://en.wikipedia.org/wiki/Ghost_in_the_Shell][Ghost in the Shell]]
-3. The local DNS ()
+3. The local [[DNS]] (or the full process, root -> TLD -> authoritative ) redirect to the authoritative
