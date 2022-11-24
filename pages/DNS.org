@@ -1,4 +1,4 @@
-* #networking, #protocols
+* #networking, #protocol
 * Description 
 DNS stands for Domain Name System.
 It is based on [[UDP]].

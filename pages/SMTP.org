@@ -1,4 +1,4 @@
-* #networking, #protocols
+* #networking, #protocol
 * Description
 The protocol underlying the emails.
 It's based on [[TCP]].

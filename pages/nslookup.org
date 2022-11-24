@@ -1,4 +1,4 @@
-* #networking, #protocols, #tool, #cli, #dns
+* #networking, #protocol, #tool, #cli, #dns
 *
 * Description
 nslookup is a program to query Internet domain name servers aka [[DNS]], see ~man nslookup~ for more detail.

@@ -1,4 +1,4 @@
-* #networking, #protocols
+* #networking, #protocol
 * Description
 The only and true web protocol.
 Based on [[TCP]] for a reliable connection, it define the structure of the message used by the web server and the User agent (it specify a client-server paradigm).

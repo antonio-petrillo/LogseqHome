@@ -1,2 +1,2 @@
 * #protocol, #networking
-*
+* DASH stand for (Dynamic Adaptive Streaming over HTTP)
