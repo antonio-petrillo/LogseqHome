@@ -1,5 +1,4 @@
 * #cli, #tool, #networking, #DNS, #protocol
-* banner:: "../assets/networking_banner.jpg"
 * dig
 Is a tool to query the [[DNS]], as usual all the flag and subcommand can be seen with ~man dig~.
 * Example 1
