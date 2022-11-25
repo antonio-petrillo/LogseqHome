@@ -53,6 +53,9 @@ I.E. (foo.com, relay1.bar.foo.com, CNAME, 1024) means that the canonical name fo
 Same as A but it is used to get the IP of the Mail Server.
 * DNS Messages
 ** Format
+:PROPERTIES:
+:id: 637f87d4-ad8e-4e01-9c81-4686e70d371b
+:END:
 [[../assets/dns_response_message_format.png]]
 ** Explanation
 Both query and response have the same format.

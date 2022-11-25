@@ -1,0 +1,28 @@
+* #cli, #tool, #networking, #DNS, #protocol
+* dig
+Is a tool to query the [[DNS]], as usual all the flag and subcommand can be seen with ~man dig~.
+* Example 1
+#+BEGIN_SRC shell
+[nto@fedora]$ dig youtube.com
+
+; <<>> DiG 9.16.33-RH <<>> youtube.com
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 55584
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;youtube.com.                   IN      A
+
+;; ANSWER SECTION:
+youtube.com.            267     IN      A       142.250.180.142
+
+;; Query time: 8 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53)
+;; WHEN: Fri Nov 25 09:58:10 CET 2022
+;; MSG SIZE  rcvd: 56
+#+END_SRC
+
+As you can see the response structure is exactly like DNS response ((637f87d4-ad8e-4e01-9c81-4686e70d371b))
