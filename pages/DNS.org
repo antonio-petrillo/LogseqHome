@@ -82,6 +82,9 @@ Contains the response from other authoritative server.
 Self explanatory.
 An example, if I ask for a MX type here I can find a A type if present.
 * Registrar
+:PROPERTIES:
+:id: 637f87d4-3e66-4865-823a-67253f46cb2b
+:END:
 A registrar is company that verify the uniqueness of a hostname, if it is unique it insert them in a DNS database, obviously the company get paid for this service.
 The ICANN (Internet Corporation for Assigned Names and Numbers) is the society that validate the various registrar.
 A list of registrars can be found at [[https://www.internic.net][internic.net]]

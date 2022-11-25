@@ -5,5 +5,78 @@ Basically when we ask a whois server, though the whois cli client, it give infor
 * Example
 
 #+BEGIN_SRC shell
+[nto@fedora ~]$ whois hackthebox.com
+[Querying whois.verisign-grs.com]
+[Redirected to whois.registrar.amazon.com]
+[Querying whois.registrar.amazon.com]
+[whois.registrar.amazon.com]
+Domain Name: hackthebox.com
+Registry Domain ID: 1589213536_DOMAIN_COM-VRSN
+Registrar WHOIS Server: whois.registrar.amazon.com
+Registrar URL: https://registrar.amazon.com
+Updated Date: 2021-08-24T12:37:21.580Z
+Creation Date: 2010-03-18T03:26:29Z
+Registrar Registration Expiration Date: 2024-03-18T03:26:29Z
+Registrar: Amazon Registrar, Inc.
+Registrar IANA ID: 468
+Registrar Abuse Contact Email: abuse@amazonaws.com
+Registrar Abuse Contact Phone: +1.2067406200
+Reseller:
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Registry Registrant ID:
+Registrant Name: On behalf of hackthebox.com owner
+Registrant Organization: Whois Privacy Service
+Registrant Street: P.O. Box 81226
+Registrant City: Seattle
+Registrant State/Province: WA
+Registrant Postal Code: 98108-1226
+Registrant Country: US
+Registrant Phone: +1.2065771368
+Registrant Phone Ext:
+Registrant Fax:
+Registrant Fax Ext:
+Registrant Email: owner-6920151@hackthebox.com.whoisprivacyservice.org
+Registry Admin ID:
+Admin Name: On behalf of hackthebox.com administrative contact
+Admin Organization: Whois Privacy Service
+Admin Street: P.O. Box 81226
+Admin City: Seattle
+Admin State/Province: WA
+Admin Postal Code: 98108-1226
+Admin Country: US
+Admin Phone: +1.2065771368
+Admin Phone Ext:
+Admin Fax:
+Admin Fax Ext:
+Admin Email: admin-6920151@hackthebox.com.whoisprivacyservice.org
+Registry Tech ID:
+Tech Name: On behalf of hackthebox.com technical contact
+Tech Organization: Whois Privacy Service
+Tech Street: P.O. Box 81226
+Tech City: Seattle
+Tech State/Province: WA
+Tech Postal Code: 98108-1226
+Tech Country: US
+Tech Phone: +1.2065771368
+Tech Phone Ext:
+Tech Fax:
+Tech Fax Ext:
+Tech Email: tech-6920151@hackthebox.com.whoisprivacyservice.org
+Name Server: cody.ns.cloudflare.com
+Name Server: jill.ns.cloudflare.com
+DNSSEC: signedDelegation
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
+>>> Last update of WHOIS database: 2021-08-24T12:37:21.813Z <<<
+
+For more information on Whois status codes, please visit https://www.icann.org/resources/pages/epp
+
+By submitting a query to the Amazon Registrar, Inc. WHOIS database, you agree to abide by the following terms. The data in Amazon Registrar, Inc.'s WHOIS database is provided by Amazon Registrar, Inc. for the sole purpose of assisting you in obtaining information about domain name accuracy. You agree to use this data only for lawful purposes and further agree not to use this data for any unlawful purpose or to: (1) enable, allow, or otherwise support the transmission by email, telephone, or facsimile of commercial advertising or unsolicited bulk email, or (2) enable high volume, automated, electronic processes to collect or compile this data for any purpose, including mining this data for your own personal or commercial purposes. Amazon Registrar, Inc. reserves the right to restrict or terminate your access to the data if you fail to abide by these terms of use. Amazon Registrar, Inc. reserves the right to modify these terms at any time.
+
+Visit Amazon Registrar, Inc. at https://registrar.amazon.com
+Contact information available here: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-contact-support.html
+
+© 2022, Amazon.com, Inc., or its affiliates
 
 #+END_SRC
+** What we know now:
+A lot of things, the output of whois is not  that short, but here we can read about which ((637f87d4-3e66-4865-823a-67253f46cb2b)) they used, when it was update last time, etc...

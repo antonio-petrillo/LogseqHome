@@ -1,2 +1,2 @@
-* add [[whois]] pages.
+* add [[whois]], [[dig]] pages.
 *
