@@ -1,2 +1,9 @@
 * #cli, #tool, #networking, #DNS, #protocol
-*
+* whois
+Provide a cli interface to the WHOIS protocol (RFC 3912).
+Basically when we ask a whois server, though the whois cli client, it give information about the domain.
+* Example
+
+#+BEGIN_SRC shell
+
+#+END_SRC
