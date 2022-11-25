@@ -1,0 +1,18 @@
+* #cli, #tool, #networking, #ICMP, #protocol
+* ping
+Is a pretty simple utility, it let you send a [[ICMP]] ECHO_REQUEST to network hosts, basically it let you see if the pinged host is reachable
+* Example
+See  ~man ping~ for more information.
+#+BEGIN_SRC shell
+[nto@fedora ~]$ ping -c 5 tryhackme.com
+PING tryhackme.com (104.22.54.228) 56(84) bytes of data.
+64 bytes from 104.22.54.228 (104.22.54.228): icmp_seq=1 ttl=55 time=17.5 ms
+64 bytes from 104.22.54.228 (104.22.54.228): icmp_seq=2 ttl=55 time=17.4 ms
+64 bytes from 104.22.54.228 (104.22.54.228): icmp_seq=3 ttl=55 time=18.4 ms
+64 bytes from 104.22.54.228 (104.22.54.228): icmp_seq=4 ttl=55 time=17.9 ms
+64 bytes from 104.22.54.228 (104.22.54.228): icmp_seq=5 ttl=55 time=17.5 ms
+
+--- tryhackme.com ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4005ms
+rtt min/avg/max/mdev = 17.391/17.747/18.429/0.381 ms
+#+END_SRC

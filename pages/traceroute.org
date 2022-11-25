@@ -1,0 +1,18 @@
+* #cli, #tool, #networking, #IP, #protocol
+* traceroute
+Traceroute is used to track the path of a [[IP]] packet on the network.
+* Example
+
+#+BEGIN_SRC shell
+[nto@fedora ~]$ traceroute tryhackme.com 
+traceroute to tryhackme.com (104.22.54.228), 30 hops max, 60 byte packets
+ 1  _gateway (192.168.1.1)  1.324 ms  1.323 ms  1.853 ms
+ 2  151.7.216.30 (151.7.216.30)  16.040 ms  16.007 ms  15.969 ms
+ 3  151.7.216.22 (151.7.216.22)  3.700 ms 151.7.216.26 (151.7.216.26)  3.780 ms  3.743 ms
+ 4  151.6.1.148 (151.6.1.148)  8.221 ms  8.508 ms 151.6.5.150 (151.6.5.150)  8.150 ms
+ 5  151.6.2.28 (151.6.2.28)  15.490 ms 151.6.1.15 (151.6.1.15)  15.559 ms 151.6.2.2 (151.6.2.2)  18.650 ms
+ 6  151.6.1.21 (151.6.1.21)  16.564 ms 151.6.6.141 (151.6.6.141)  14.287 ms 151.6.1.21 (151.6.1.21)  14.842 ms
+ 7  cloudflare.mix-it.net (217.29.66.167)  15.096 ms  15.399 ms  14.919 ms
+ 8  172.71.112.4 (172.71.112.4)  16.203 ms  14.878 ms  17.098 ms
+ 9  104.22.54.228 (104.22.54.228)  15.423 ms  15.851 ms  16.111 ms
+#+END_SRC

@@ -1,2 +1,2 @@
-* add [[whois]], [[dig]] pages.
+* add [[whois]], [[dig]], [[ping]], [[traceroute]] pages.
 *
