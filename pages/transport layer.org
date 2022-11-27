@@ -29,3 +29,4 @@ The idea is simple if ~process 1~ send a datagram to ~process 2~ on another host
 |12345|54321|
 Here I've written them in decimal, but in the datagram they will be in binary.
 Know the *transport layer* know that the datagram from ~12345~ should be delivered to ~54321~.
+* Principle of an reliable connection
