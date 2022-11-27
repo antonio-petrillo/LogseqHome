@@ -9,9 +9,10 @@ It read the destination port and send the data to that port, hence to the proces
 You can also watch:
  {{embed ((637fa0c7-3e12-4ac0-a1b2-60ab9f78c78b))}}
 Here ~recvfrom~ is used to get the client address and the port, so they can be used to send a response back.
-* Less space for packet header
-UDP add 8 byte, the header, to each datagram, while
+* UDP structure
+UDP add 8 byte, the header, to each datagram, while [[TCP]] use 20 bytes.
+[[../assets/udp-header-structure.png]]
 * Error checking
-UDP perform a simple error checking process on the datagram
+UDP perform a simple error checking process on the datagram, in particular it uses a [[checksum]].
 * RFCs
 + RFC 768
