@@ -8,4 +8,5 @@ This because of how the TCP work, just think about the connection, when a TCP co
 Hence IT need more information.
 ** Parameter used
 Other than the ~source port~ and the ~destination port~ it bundle also the ~source IP~ and ~destination IP~.
-With this information extra TCP can distinguish the request and redirect to the correct socket, (basically the host must have a map/hashtable )
+With this information extra TCP can distinguish the request and redirect to the correct socket, (basically the host must have a [[map]] of the connections)
+**
