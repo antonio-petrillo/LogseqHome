@@ -1,0 +1,5 @@
+* #networking
+* It is in between [[application layer]] and [[network layer]].
+* What it does
+The information a this level is called *segment*.
+If the *message* received from [[application layer]] are to big the
