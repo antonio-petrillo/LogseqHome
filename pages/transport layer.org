@@ -24,3 +24,8 @@ The job of take the data, eventually from multiple socket, encapsulate them with
 [[../assets/generic_datagram_format.png]]
 Each *datagram* has the *source port* and the *destination port*, this information will be used by *multiplexing* and *demultiplexing*.
 The ports are identified by numbers they could go from [$0, 2^{16}$], so this means [$0, 65535$].
+The idea is simple if ~process 1~ send a datagram to ~process 2~ on another host, or even on the same the thing that count is that it is at least another process, and say they have respectively ports ~12345~ and ~54321~ then the first 32 bits will be:
+|source port| destination port|
+|12345|54321|
+Here I've written them in decimal, but in the datagram they will be in binary.
+Know the *transport layer* know that the datagram from ~12345~ should be delivered to ~54321~.

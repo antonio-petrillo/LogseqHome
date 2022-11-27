@@ -1,2 +1,6 @@
 * #networking, #protocol, #todo
 * User Datagram Protocol
+Unreliable data transfer, this is [[transport layer]] protocol
+* Multiplexing and Demultiplexing
+UDP does nothing fancy about multiplexing and demultiplexing.
+The process explained ((638382c2-012a-41c9-957e-c7164bf1e507))
