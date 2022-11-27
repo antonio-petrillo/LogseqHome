@@ -21,3 +21,6 @@ On the same example imagine that the web server send a proper HTTP response, now
 The job of redirecting the data from the network to the right process is called *demultiplexing*.
 The job of take the data, eventually from multiple socket, encapsulate them with the *transport layer information* (that will be used later from the *demultiplexing*) and pass the to the [[network layer]] is called *multiplexing*.
 ** Datagram format
+[[../assets/generic_datagram_format.png]]
+Each *datagram* has the *source port* and the *destination port*, this information will be used by *multiplexing* and *demultiplexing*.
+The ports are identified by numbers they could go from [$0, 2^{16}$], so this means [$0, 65535$].
