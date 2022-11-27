@@ -7,4 +7,12 @@ On the other hand when it receive a *datagram* from the [[network layer]] recomp
 * Protocol at this level
 Lately there some new protocol at this level, but the most famous, hence the most important, are [[TCP]] and [[UDP]].
 * Note on the underlying level
-The [[network layer]], aka [[network layer][IP]] layer
+The [[network layer]], aka [[network layer][IP]] layer is a *Best Effort* protocol, it does whatever it can does to deliver all the information, but it isn't guaranteed, here the *transport layer* can provide *reliability* using the [[TCP]].
+* Multiplexing and Demultiplexing
+:PROPERTIES:
+:id: 638382c2-012a-41c9-957e-c7164bf1e507
+:END:
+The main purpose of [[TCP]] and [[UDP]] is to extend [[network layer][IP]] from *host-to-host* communication to *process-to-process* communication.
+Basically [[network layer][IP]] send the data from one host to the other, but this is not enough and the transport layer shunts the data to the specific process
+** Example
+From my PC I send an [[HTTP]] request to a web server, when my request reach the server it should be *redirect* to the process that identify the web server, usually on a server there could be multiple services, just imagine that the server has also a
