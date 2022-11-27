@@ -32,3 +32,12 @@ Know the *transport layer* know that the datagram from ~12345~ should be deliver
 * Principle of an reliable connection
 ** Schema
 [[../assets/reliable_data_transfer_service_model_impl.png]]
+*** Note
++ rdt (reliable data transfer)
++ udt (unreliable data transfer)
+** Approach
+We should consider, and in fact it is, unreliable the underlying tunnel, hence we have to take care of such aspect, but how?
+*** Note
++ From now on I will use *packet* instead of *segment* because it is more appropriate we're considering the networking in general.
++ The [[[https://www.google.com/search?q=computer+networking+a+top+down+approach&oq=computer+networking+a+top+down+approach+&aqs=chrome..69i57j69i59j69i65j69i60l2.3510j0j7&sourceid=chrome&ie=UTF-8][book]] focus on ~unidirectional data transfer~, the ~full duplex~ is similar but to long to explain.
+** Continue
