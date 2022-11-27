@@ -42,3 +42,4 @@ We should consider, and in fact it is, unreliable the underlying tunnel, hence w
 + The [[Computer Networking a Top Down Approach][book]] focus on ~unidirectional data transfer~, the ~full duplex~ is similar but to long to explain.
 ** Continue
 [[ARQ]] protocol
+** #TODO

@@ -1,2 +1,8 @@
 * #protocol, #networking, #TODO
 * Automatic Repeat reQuest
+* Characteristic
+** Error detection
+** Receiver Feedback
+** Retransmission
++ ACK message received correctly
++ NAK message *not* received correctly

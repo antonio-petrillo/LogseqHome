@@ -1,4 +1,4 @@
-* #networking, #protocol, #todo
+* #networking, #protocol
 * User Datagram Protocol
 Unreliable data transfer, this is [[transport layer]] protocol.
 It is a connectionless protocol, hence it didn't do a handshake before the communication begin, like it happens in [[TCP]].
