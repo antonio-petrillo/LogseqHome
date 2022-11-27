@@ -2,4 +2,8 @@
 * It is in between [[application layer]] and [[network layer]].
 * What it does
 The information a this level is called *segment*.
-If the *message* received from [[application layer]] are to big the
+When a *message* is received from [[application layer]] and they are to big they are divided in multiple segments, in any case they are sended to [[network layer]] .
+On the other hand when it receive a *datagram* from the [[network layer]] recompose, *if and only if* the chosen protocol at this level permit it, and the send it to the [[application layer]].
+* Protocol at this level
+Lately there some new protocol at this level, but the most famous, hence the most important, are [[TCP]] and [[UDP]].
+*
