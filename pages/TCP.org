@@ -1,2 +1,5 @@
 * #networking, #protocol, #todo
 * Transmission Control Protocol
+Reliable Data Transfer
+* Multiplexing and Demultiplexing
+TCP use more sophisticated approach than the one described in [[transport layer]].

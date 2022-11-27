@@ -3,4 +3,9 @@
 Unreliable data transfer, this is [[transport layer]] protocol
 * Multiplexing and Demultiplexing
 UDP does nothing fancy about multiplexing and demultiplexing.
-The process explained ((638382c2-012a-41c9-957e-c7164bf1e507))
+The process explained [[transport layer][here]] is the technique used by UDP.
+It read the destination port and send the data to that port, hence to the process that uses that port.
+You can also watch:
+ {{embed ((637fa0c7-3e12-4ac0-a1b2-60ab9f78c78b))}}
+Here ~recvfrom~ is used to get the client address and the port, so they can be used to send a response back.
+*

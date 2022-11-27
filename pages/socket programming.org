@@ -5,6 +5,9 @@ Before a packet of information can be sended on UDP we need to add information a
 Scheme of the communication.
 [[../assets/udp_programming_scheme.png]]
 ** Server
+:PROPERTIES:
+:id: 637fa0c7-3e12-4ac0-a1b2-60ab9f78c78b
+:END:
 #+begin_src python
 from socket import *
 
