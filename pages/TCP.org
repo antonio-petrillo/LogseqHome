@@ -56,8 +56,16 @@ Usually the option field is empty, so, the length of a TCP header is, usually, o
 It is the part just after the header length and the beginning of receive window.
 This flag are used to identify which kind of operation is required (ACK, SYN, SYN/ACK, FIN, ecc...)
 **** Start and end connection
-ACK, SYN, RST & FIN are used to start and terminate a connection.
-**** CWR & ECE are used for control flow
+ACK, SYN, RST & FIN
+ Are used to start and terminate a connection.
+**** CWR & ECE
+Are used for control flow.
 **** PSH
+ Means that the receiver must push, immediately, the data to the upper level.
+**** URG
+Means that the segment contains data that the sended has marked as *urgent*.
+When this is set the receiver can take the pointer to that urgent data immediately, without need to search the important data in the response, from the field *urgent data pointer*.
+**** In practice
++ In practice PSH and URG are not used, this because when a segment contains important data, usually it is all composed by important data and also it's not job of TCP to hide data, hence that data is anyway ~visible | transparent | not encrypted~
 *** Options field
 Is used to hold specific information, like a non standard MSS, or particular timestamp or other stuff like that.
