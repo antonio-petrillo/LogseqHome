@@ -52,3 +52,11 @@ It has a limited size because an rdt implementation need traffic control, [[TCP]
 **** [[SRP]] protocol
 The size in the SRP does the same job that it does in the GBN protocol.
 **** Recap of RDT (Reliable Data Transfer)
+| Mechanism | purpose|
+| Checksum | Used to find is the transmitted packet is corrupted|
+|Timer | Used to timeout a packet that is taking to much time to ACK'd, it is considered lost, hence rentransmitted|
+| ACK | Used by the receiver to communicate to the sender that the packet arrived without error (usually they contain the sequence's number)|
+| sequence's number | Think about as an ID and an Index for packet, it is used to recompose the original message|
+| NAK | basically an ~(complement ACK)~|
+| window & pipelining | The technique used, instead of ~stop & wait~ to speed up transfer|
+**** This is the principle behind [[TCP]]
