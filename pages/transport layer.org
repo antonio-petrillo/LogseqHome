@@ -48,3 +48,4 @@ Here I will just summarize some key aspect, copy word by word is not that useful
 **** rdt 3.0 receiver
 [[../assets/rdt3_receiver_fsm.png]
 **** [[GBN]] protocol
+It has a limited size because an rdt implementation need traffic control, [[TCP]] use GBN to avoid the congestion of the network.
