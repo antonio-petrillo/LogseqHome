@@ -2,3 +2,10 @@
 * Selective Repeat Protocol
 Retransmit only the packet that contains an error.
 To accomplish that the receiver should send the number of the packet received in the ~ACK~ back to the sender.
+* [[sliding-window]]
+[[../assets/sr_seq_num_space.png]]
+Here the sliding window have some other condition, compared to [[GBN]], before it could advance.
+Basically the lower index can advance only when the  corresponding ~ACK~ is received.
+* Example
+[[../assets/selective_request_protocol_example.png]]
+Note that the sender's window could differ from receiver's window.
