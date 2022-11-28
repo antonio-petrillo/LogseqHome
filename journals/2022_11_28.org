@@ -1,1 +1,3 @@
-*
+* Continue [[transport layer]] and [[TCP]]
+* changed keyboard shortcut to a more vanilla emacs way, (need improvment)
+* Search for a package like [[https://github.com/abo-abo/avy][avy jump]], maybe try to rewrite for logseq.
