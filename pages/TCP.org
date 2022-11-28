@@ -46,4 +46,18 @@ Detect if the segment is corrupted or not.
 Both are of ~16 bit~ (~2 bytes~).
 They are used to create a reliable data transfer, see ((6384ad9d-7872-40af-87f3-a253a10b54db)).
 *** Receive Window
-Used for the ~flow control~, it is ~16 bit~
+Used for the ~flow control~, it is ~16 bit~ long.
+Point out the number  of bytes the receiver would accept.
+*** Header length
+TCP segments have a variable length, the header length, of ~4 bit~ specify the TCP header length with ~multiple of 32 bit~.
+The length of the header is variable because there is the Options field, which is variable, before the data.
+Usually the option field is empty, so, the length of a TCP header is, usually, of ~20 bytes~.
+*** Flag field
+It is the part just after the header length and the beginning of receive window.
+This flag are used to identify which kind of operation is required (ACK, SYN, SYN/ACK, FIN, ecc...)
+**** Start and end connection
+ACK, SYN, RST & FIN are used to start and terminate a connection.
+**** CWR & ECE are used for control flow
+**** PSH
+*** Options field
+Is used to hold specific information, like a non standard MSS, or particular timestamp or other stuff like that.
