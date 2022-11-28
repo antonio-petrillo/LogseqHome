@@ -16,5 +16,7 @@ TCP is a ~full duplex service~.
 TCP is a ~Point to Point~ connection, it happen only between 2 hosts, a multicast communication is not possible with TCP.
 * Buffers
 [[../assets/tcp_buffers.png]]
-* Three-way Handshake
+* #TODO Three-way Handshake
 TCP perform a three-way handshake to initialize a connection.
+* #TODO Maximum Segment Size (MSS)
+*
