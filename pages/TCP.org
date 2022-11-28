@@ -69,3 +69,5 @@ When this is set the receiver can take the pointer to that urgent data immediate
 + In practice PSH and URG are not used, this because when a segment contains important data, usually it is all composed by important data and also it's not job of TCP to hide data, hence that data is anyway ~visible | transparent | not encrypted~
 *** Options field
 Is used to hold specific information, like a non standard MSS, or particular timestamp or other stuff like that.
+** Going deep
+*** Sequence's number & acknowledgment's number
