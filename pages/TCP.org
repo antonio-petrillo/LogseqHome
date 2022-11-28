@@ -18,5 +18,14 @@ TCP is a ~Point to Point~ connection, it happen only between 2 hosts, a multicas
 [[../assets/tcp_buffers.png]]
 * #TODO Three-way Handshake
 TCP perform a three-way handshake to initialize a connection.
-* #TODO Maximum Segment Size (MSS)
-*
+* Maximum Segment Size (MSS)
+Is the size used for a segment there are multiple approach, the most common is the follwing.
+Take the MTU (Maximum Transmission Unit, it come from [[network layer]] ), it is the size of a IP datagram, typically ~1500 bytes~ and remove from it the space for the IP headers, ~40 bytes~, this means that, usually,  the MSS is ~1460 bytes~.
+In this ~1460 bytes~ we should put all the TCP header and also the the data from the [[application layer]].
+Other approach try to compute the size of the largest IP datagram that can surf the network but it is less used.
+* Structure of TCP segment
+** TCP segment
+It is formed by the data (from or directed to the [[application layer]]) encapsulated in a TCP header.
+** Data to large
+When the data from [[application layer]] is to large, TCP slits it in multiple segment and then recompose it on the other side of the connection, always from TCP.
+**
