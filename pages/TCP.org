@@ -28,4 +28,5 @@ Other approach try to compute the size of the largest IP datagram that can surf 
 It is formed by the data (from or directed to the [[application layer]]) encapsulated in a TCP header.
 ** Data to large
 When the data from [[application layer]] is to large, TCP slits it in multiple segment and then recompose it on the other side of the connection, always from TCP.
-**
+** TCP header
+It use ~20 bytes~ for the header, instead of [[UDP]] which use ~8 bytes~.
