@@ -46,4 +46,5 @@ Here I will just summarize some key aspect, copy word by word is not that useful
 **** rdr 3.0 sender
 [[../assets/rdt3_sender_fsm.png]]
 **** rdt 3.0 receiver
-[[../assets/rdt3_receiver_fsm.png]]
+[[../assets/rdt3_receiver_fsm.png]
+**** [[GBN]] protocol

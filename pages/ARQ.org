@@ -1,4 +1,4 @@
-* #protocol, #networking,
+* #protocol, #networking
 * Automatic Repeat reQuest
 * Characteristic
 ** Error detection
