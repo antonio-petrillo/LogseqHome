@@ -1,4 +1,5 @@
 * #protocol, #sliding-window
+*
 * Go-Back-N
 In a GBN protocol the sender can send multiple packet at the same time without wait for the ~ACK~ response, but it cannot send more than ~N~ without waiting for an  ~ACK~ on the pipeline (see [[Computer Networking a Top Down Approach]] chapter 3).
 * Sliding window

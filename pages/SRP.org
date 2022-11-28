@@ -1,0 +1,4 @@
+* #protocol
+* Selective Repeat Protocol
+Retransmit only the packet that contains an error.
+To accomplish that the receiver should send the number of the packet received in the ~ACK~
