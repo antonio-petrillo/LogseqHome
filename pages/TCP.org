@@ -30,3 +30,20 @@ It is formed by the data (from or directed to the [[application layer]]) encapsu
 When the data from [[application layer]] is to large, TCP slits it in multiple segment and then recompose it on the other side of the connection, always from TCP.
 ** TCP header
 It use ~20 bytes~ for the header, instead of [[UDP]] which use ~8 bytes~.
+*** Structure
+:PROPERTIES:
+:id: 6384c27e-ae0a-458a-b685-89439023e26d
+:END:
+[[../assets/tcp_header.png]]
+*** Source port & Dest port
+They are used for multiplexing and demultiplexing.
+*** Internet Checksum
+Detect if the segment is corrupted or not.
+*** Sequence number & Acknowledgment number
+:PROPERTIES:
+:id: 6384c34d-6bed-4930-af71-c6a19c841ae2
+:END:
+Both are of ~16 bit~ (~2 bytes~).
+They are used to create a reliable data transfer, see ((6384ad9d-7872-40af-87f3-a253a10b54db)).
+*** Receive Window
+Used for the ~flow control~, it is ~16 bit~

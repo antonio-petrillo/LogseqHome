@@ -36,6 +36,9 @@ Know the *transport layer* know that the datagram from ~12345~ should be deliver
 + rdt (reliable data transfer)
 + udt (unreliable data transfer)
 ** Approach
+:PROPERTIES:
+:id: 6384ad9d-7872-40af-87f3-a253a10b54db
+:END:
 We should consider, and in fact it is, unreliable the underlying tunnel, hence we have to take care of such aspect, but how?
 *** Note
 + From now on I will use *packet* instead of *segment* because it is more appropriate we're considering the networking in general.
