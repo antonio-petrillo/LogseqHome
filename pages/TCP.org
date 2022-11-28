@@ -13,3 +13,6 @@ With this information extra TCP can distinguish the request and redirect to the 
 TCP is ~connection oriented~ hence when 2 host want to communicate they need first to establish a connection.
 This connection lives only on the 2 host, the layer below the [[transport layer]] don't know nothing about TCP, they just receive and send datagram.
 TCP is a ~full duplex service~.
+TCP is a ~Point to Point~ connection, it happen only between 2 hosts, a multicast communication is not possible with TCP.
+* Three-way Handshake
+TCP perform a three-way handshake to initialize a connection.
