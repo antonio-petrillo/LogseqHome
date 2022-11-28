@@ -40,6 +40,10 @@ We should consider, and in fact it is, unreliable the underlying tunnel, hence w
 *** Note
 + From now on I will use *packet* instead of *segment* because it is more appropriate we're considering the networking in general.
 + The [[Computer Networking a Top Down Approach][book]] focus on ~unidirectional data transfer~, the ~full duplex~ is similar but to long to explain.
-** Continue
-+ To be reliable we need the [[ARQ]] protocol.
-+
+*** Continue
+Here I will just summarize some key aspect, copy word by word is not that useful.
+**** To be reliable we need the [[ARQ]] protocol.
+**** rdr 3.0 sender
+[[../assets/rdt3_sender_fsm.png]]
+**** rdt 3.0 receiver
+[[../assets/rdt3_receiver_fsm.png]]
