@@ -1,2 +1,7 @@
 * #networking, #protocol, #tool, #cli, #enumeration, #port-enumeration
 * nmap
+nmap can scan a server and retrieve information
+** What can it find?
++ Open ports & Service running on that port
++ Type of OS
++ Sometime it can find the type of firewall
