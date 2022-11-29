@@ -88,3 +88,5 @@ This protocol is known as ~cumulative acknowledgment~.
 **** Note
 1. In this example I assumed a [[SRP]] in the last part of the example, with [[GBN]] will be a little bit different.
 2. Usually the number of the first ACK segment is picked at random (pseudo-random).
+*** Timeout and RTT (Round Time Trip)
+For each group of segment TCP compute a SampleRTT, the time since one of the segment is given to the [[network layer]] to the time the segment is ACK'd.
