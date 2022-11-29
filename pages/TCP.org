@@ -71,6 +71,9 @@ When this is set the receiver can take the pointer to that urgent data immediate
 Is used to hold specific information, like a non standard MSS, or particular timestamp or other stuff like that.
 ** Going deep
 *** Sequence's number & acknowledgment's number
+:LOGBOOK:
+CLOCK: [2022-11-29 Tue 10:26:49]--[2022-11-29 Tue 10:26:50] =>  00:00:01
+:END:
 TCP use the implicit numeration of a stream of byte as sequence number, with this it can understand the order in which they come and reorder them.
 For the ACK there is another approach, the next usable ACK in a TCP communication is the lowest number of bytes received + 1.
 Here an example, it is more explanatory in this case:
@@ -80,3 +83,8 @@ Now B received the first one ([0 - 535]), to ACK the host A is send the ACK numb
 If A receive an ACK number 1025, it knows that the third segment reached B but it also know that the only one that isn't ACK'D is 537 hence the second segment will be resended.
 #+END_EXAMPLE
 This protocol is known as ~cumulative acknowledgment~.
+**** Example
+[[../assets/tcp_sequence_numbers_example.png]]
+**** Note
+1. In this example I assumed a [[SRP]] in the last part of the example, with [[GBN]] will be a little bit different.
+2. Usually the number of the first ACK segment is picked at random (pseudo-random).
