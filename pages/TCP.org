@@ -102,3 +102,4 @@ A common value for $$\beta$$ is $$0.25$$ aka $$\frac{1}{4}$$.
 Compute the timeout:
 $$timeout = EstimatedRTT + 4\cdot DevRTT$$
 Basically we are asking for value outside of gaussian bell, for abnormal values for the timeout.
+An initial value for the ~timeout~ is ~1 second~.
