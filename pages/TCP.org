@@ -75,5 +75,8 @@ TCP use the implicit numeration of a stream of byte as sequence number, with thi
 For the ACK there is another approach, the next usable ACK in a TCP communication is the lowest number of bytes received + 1.
 Here an example, it is more explanatory in this case:
 #+BEGIN_EXAMPLE
-Host A send 3 TCP segment, say that goes from [0 - 535] bytes (see sequence)
+Host A send 3 TCP segment, say that goes from [0 - 535] bytes (see sequence' number), the second from [536 - 1023] and the third [1024 - 2048].
+Now B received the first one ([0 - 535]), to ACK the host A is send the ACK number 536 (535 + 1) so  now A knows that the first segment is received by B.
+If A receive an ACK number 1025, it knows that the third segment reached B but it also know that the only one that isn't ACK'D is 537 hence the second segment will be resended.
 #+END_EXAMPLE
+This protocol is known as ~cumulative acknowledgment~.
