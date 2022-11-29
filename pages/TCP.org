@@ -2,6 +2,9 @@
 * Transmission Control Protocol
 Reliable Data Transfer
 * Multiplexing and Demultiplexing
+:PROPERTIES:
+:collapsed: true
+:END:
 ** Is more complicated
 TCP use more sophisticated approach than the one described in [[transport layer]].
 This because of how the TCP work, just think about the connection, when a TCP connection is established it create a new socket on which the client can communicate.
@@ -16,8 +19,6 @@ TCP is a ~full duplex service~.
 TCP is a ~Point to Point~ connection, it happen only between 2 hosts, a multicast communication is not possible with TCP.
 * Buffers
 [[../assets/tcp_buffers.png]]
-* #TODO Three-way Handshake
-TCP perform a three-way handshake to initialize a connection.
 * Maximum Segment Size (MSS)
 Is the size used for a segment there are multiple approach, the most common is the follwing.
 Take the MTU (Maximum Transmission Unit, it come from [[network layer]] ), it is the size of a IP datagram, typically ~1500 bytes~ and remove from it the space for the IP headers, ~40 bytes~, this means that, usually,  the MSS is ~1460 bytes~.
@@ -120,3 +121,6 @@ The sender keep also this other vars:
 The difference between this 2 indicates the amount of data sended.
 So the sender must ensure that:
 $$LastByteSend - LastByteAcked \leq rwnd$$
+* Connection management
+** 3 way handshake
+** Disconnection
