@@ -5,3 +5,45 @@ nmap can scan a server and retrieve information
 + Open ports & Service running on that port
 + Type of OS
 + Sometime it can find the type of firewall
+* Common switches
++ ~sV~ search for open ports and services
++  ~sC~ use default script for searching (they are written in [[lua]])
++  ~-v~ verbose output
++ ~-O~ OS detection
+* Example
+
+#+BEGIN_SRC shell
+[nto@fedora ~]$ sudo nmap -sC -sV -O leonardotamiano.xyz
+[sudo] password for nto: 
+Starting Nmap 7.93 ( https://nmap.org ) at 2022-11-29 17:53 CET
+Nmap scan report for leonardotamiano.xyz (45.76.93.206)
+Host is up (0.031s latency).
+rDNS record for 45.76.93.206: 45.76.93.206.vultrusercontent.com
+Not shown: 997 closed tcp ports (reset)
+PORT    STATE SERVICE  VERSION
+22/tcp  open  ssh      OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 3e9c3c1ce29f2564e30914c45ef937e6 (RSA)
+|   256 4c0a02c45e575390eaebeb82689e35a2 (ECDSA)
+|_  256 b13410277cf36c314c2f776046bfbc55 (ED25519)
+80/tcp  open  http     nginx
+|_http-title: Did not follow redirect to https://leonardotamiano.xyz/
+443/tcp open  ssl/http nginx
+| tls-nextprotoneg: 
+|_  http/1.1
+| tls-alpn: 
+|_  http/1.1
+| ssl-cert: Subject: commonName=leonardotamiano.xyz
+| Subject Alternative Name: DNS:leonardotamiano.xyz
+| Not valid before: 2022-11-09T02:31:43
+|_Not valid after:  2023-02-07T02:31:42
+|_http-title: Leonardo Tamiano&#39;s Cyberspace
+|_ssl-date: TLS randomness does not represent time
+Aggressive OS guesses: Linux 5.0 (95%), Linux 5.0 - 5.4 (95%), Linux 5.4 (94%), HP P2000 G3 NAS device (93%), OpenWrt 12.09-rc1 Attitude Adjustment (Linux 3.3 - 3.7) (93%), Linux 4.15 - 5.6 (93%), Linux 5.3 - 5.4 (93%), Linux 2.6.32 (92%), Infomir MAG-250 set-top box (92%), Ubiquiti AirMax NanoStation WAP (Linux 2.6.32) (92%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 10 hops
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 20.24 seconds
+#+END_SRC

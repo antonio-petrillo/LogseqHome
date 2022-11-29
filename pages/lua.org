@@ -1,0 +1,5 @@
+* #programming, #programming-language, #TODO, #imperative, #script-language, #embed
+* Cool project
++ [[https://nmap.org/][nmap]]
++ [[https://awesomewm.org/][awesome wm]]
++ [[https://neovim.io/][nvim]]
