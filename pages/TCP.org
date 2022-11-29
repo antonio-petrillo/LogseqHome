@@ -90,3 +90,9 @@ This protocol is known as ~cumulative acknowledgment~.
 2. Usually the number of the first ACK segment is picked at random (pseudo-random).
 *** Timeout and RTT (Round Time Trip)
 For each group of segment TCP compute a SampleRTT, the time since one of the segment is given to the [[network layer]] to the time the segment is ACK'd.
+The SampleRTT is not computed for the re transmitted segments.
+The SampleRTT is different on each computation, hence TCP made an estimation called EstimateRTT.
+On each new SampleRTT the EstimateRTT is update in the following way:
+$$EstimateRTT = (1 - \alpha)\cdot EstimateRTT + \alpha\cdot SampleRTT $$
+It is almost the [[Bayes Theorem]] (more like the mutual exclusion possibilities)!
+A common value for $$\alpha$$ is $$0.125$$
