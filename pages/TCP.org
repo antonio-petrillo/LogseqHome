@@ -146,3 +146,7 @@ When the client receive the server ~FIN~ it responds with an ~ACK~ and now both 
 *** Schema
 [[../assets/tcp-close-connection.png]]
 ** TCP's state
+*** Client
+[[../assets/tcp-states-client.png]]
+*** Server
+[[../assets/tcp-state-server.jpg]]
