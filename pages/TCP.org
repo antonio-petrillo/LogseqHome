@@ -71,3 +71,9 @@ When this is set the receiver can take the pointer to that urgent data immediate
 Is used to hold specific information, like a non standard MSS, or particular timestamp or other stuff like that.
 ** Going deep
 *** Sequence's number & acknowledgment's number
+TCP use the implicit numeration of a stream of byte as sequence number, with this it can understand the order in which they come and reorder them.
+For the ACK there is another approach, the next usable ACK in a TCP communication is the lowest number of bytes received + 1.
+Here an example, it is more explanatory in this case:
+#+BEGIN_EXAMPLE
+Host A send 3 TCP segment, say that goes from [0 - 535] bytes (see sequence)
+#+END_EXAMPLE
