@@ -127,6 +127,11 @@ $$LastByteSend - LastByteAcked \leq rwnd$$
 The client that want to establish a connection send a TCP request with the ~SYN~ flag set to ~1~, this segment is called ~SYN~, it doesn't contain application data, the initial sequence's number is chosen at random, hence ~seq=client-isn~, where ~client-isn = random~.
 *** SYN/ACK
 When the server receive, remember it can be lost, the server create the buffers and vars for a new TCP connection, then send a respond to the client.
-The respond has the ~SYN~ & ~ACK~ flag set to ~1~, the ~ACK number = client-ins~
+The respond has the ~SYN~ & ~ACK~ flag set to ~1~, the ~ACK number = client-isn + 1~, while the ~Sequence number~ will be chosen at random, ~seq = server-isn~ where ~server-isn = random~.
+This segment does't contain data from [[application layer]].
 *** ACK
+The client receive the ~SYN/ACK~ segment then it create the buffers and the vars for the TCP connection and then, at last, send a new segment to the server.
+The new segment has ~SYN~ set to ~0~, ~ACK~ set to ~1~ (for this it is called ACK), the ~sequence number~ will be ~client-isn + 1~ while the ~ACK number~ will be ~server-isn+1~.
+*** Schema
+[[../assets/3-way-handshake.png]]
 ** Disconnection
