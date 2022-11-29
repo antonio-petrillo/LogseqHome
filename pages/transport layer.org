@@ -63,3 +63,4 @@ The size in the SRP does the same job that it does in the GBN protocol.
 | NAK | basically an ~(complement ACK)~|
 | window & pipelining | The technique used, instead of ~stop & wait~ to speed up transfer|
 **** This is the principle behind [[TCP]]
+* Control Flow

@@ -151,4 +151,5 @@ When the client receive the server ~FIN~ it responds with an ~ACK~ and now both 
 *** Server
 [[../assets/tcp-state-server.jpg]]
 ** RST flag
-When a server receive a ~SYN~ flag for specific port and on that port, always the server, doesn't have not
+When a server receive a ~SYN~ flag for specific port and on that port, always the server, doesn't have a running program, i.e. ~SYN for port 80~ but there is no web server running, it respond with a packet with ~RST~ flag set to ~1~, so it can inform the client that it has received the connection request, but it can't proceed with the handshake.Server
+This is used by [[nmap]] to enumerate the port on a server (it does a lot more than that).
