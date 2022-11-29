@@ -95,4 +95,10 @@ The SampleRTT is different on each computation, hence TCP made an estimation cal
 On each new SampleRTT the EstimateRTT is update in the following way:
 $$EstimateRTT = (1 - \alpha)\cdot EstimateRTT + \alpha\cdot SampleRTT $$
 It is almost the [[Bayes Theorem]] (more like the mutual exclusion possibilities)!
-A common value for $$\alpha$$ is $$0.125$$
+A common value for $$\alpha$$ is $$0.125$$ aka $$\frac{1}{8}$$
+Since SampleRTT is a mean ([[https://en.wikipedia.org/wiki/Moving_average#:~:text=An%20exponential%20moving%20average%20(EMA,decreases%20exponentially%2C%20never%20reaching%20zero.][link]]), we need also a standard deviation, we call it DevRTT (Deviation RTT).
+$$DevRTT = (1-\beta)\cdot DevRTT + \beta\cdot \mid SampleRTT - EstimatedRTT \mid$$
+A common value for $$\beta$$ is $$0.25$$ aka $$\frac{1}{4}$$.
+Compute the timeout:
+$$timeout = EstimatedRTT + 4\cdot DevRTT$$
+Basically we are asking for value outside of gaussian bell, for abnormal values for the timeout.
