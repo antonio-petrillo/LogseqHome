@@ -123,4 +123,10 @@ So the sender must ensure that:
 $$LastByteSend - LastByteAcked \leq rwnd$$
 * Connection management
 ** 3 way handshake
+*** SYN
+The client that want to establish a connection send a TCP request with the ~SYN~ flag set to ~1~, this segment is called ~SYN~, it doesn't contain application data, the initial sequence's number is chosen at random, hence ~seq=client-isn~, where ~client-isn = random~.
+*** SYN/ACK
+When the server receive, remember it can be lost, the server create the buffers and vars for a new TCP connection, then send a respond to the client.
+The respond has the ~SYN~ & ~ACK~ flag set to ~1~, the ~ACK number = client-ins~
+*** ACK
 ** Disconnection
