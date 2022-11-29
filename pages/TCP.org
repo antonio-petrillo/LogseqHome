@@ -103,3 +103,6 @@ Compute the timeout:
 $$timeout = EstimatedRTT + 4\cdot DevRTT$$
 Basically we are asking for value outside of gaussian bell, for abnormal values for the timeout.
 An initial value for the ~timeout~ is ~1 second~.
+*** Flow Control
+The field ~receive window~ tell to the sender the amount of free space in the buffer of the receiver.
+Since TCP is ~full duplex~ the ~receive window~ is maintained in both way.
