@@ -66,8 +66,12 @@ The size in the SRP does the same job that it does in the GBN protocol.
 * Control Flow
 There are 2 main way to detect congested traffic.
 ** Check End to End
+:PROPERTIES:
+:id: 6386231c-7c65-4e6f-8ac2-ad9aa6e2a8b9
+:END:
 In this case there is no support from the network layer, we must pay attention to packet loss, NAK and stuff like that, in the case of TCP a triple ACK for a segment.
 When this happen the protocol should adjust his transmission rate, through its ~window size~.
 ** Check assisted by the network
 In this case is the network that inform us that there is a congested traffic, it can communicate this with a single bit ~1~ there is congested traffic, ~0~ no congested traffic.
 One approach is the ~ATM ABR~ (~Available Bit Rate~) in  which the router can inform explicit the ~Transport Layer~ about the bit rate that it can hold, then the protocol adjust itself through its ~window size~.
+This approach require at least one RTT.

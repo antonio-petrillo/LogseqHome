@@ -153,3 +153,6 @@ When the client receive the server ~FIN~ it responds with an ~ACK~ and now both 
 ** RST flag
 When a server receive a ~SYN~ flag for specific port and on that port, always the server, doesn't have a running program, i.e. ~SYN for port 80~ but there is no web server running, it respond with a packet with ~RST~ flag set to ~1~, so it can inform the client that it has received the connection request, but it can't proceed with the handshake.Server
 This is used by [[nmap]] to enumerate the port on a server (it does a lot more than that).
+* Control Flow
+TCP use an END to END approach for control flow (see ((6386231c-7c65-4e6f-8ac2-ad9aa6e2a8b9)) here).
+*THIS HOLDS IF WE CONSIDER CLASSIC TCP*, the book introduce first /classic TCP/ which use End to End.
