@@ -135,3 +135,14 @@ The new segment has ~SYN~ set to ~0~, ~ACK~ set to ~1~ (for this it is called AC
 *** Schema
 [[../assets/3-way-handshake.png]]
 ** Disconnection
+*** Client FIN
+When the client want to interrupt the communication, it send a TCP segment with the flag ~FIN~ set to ~1~.
+*** Server ACK
+When the server receive the ~FIN~ respond with an ~ACK~.
+*** Server FIN
+Right after the ~ACK~ response the server send also his ~FIN~ request
+*** Client ACK
+When the client receive the server ~FIN~ it responds with an ~ACK~ and now both of them start the connection's shutdown (free buffers, vars, etc...).
+*** Schema
+[[../assets/tcp-close-connection.png]]
+** TCP's state
