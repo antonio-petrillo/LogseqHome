@@ -150,3 +150,5 @@ When the client receive the server ~FIN~ it responds with an ~ACK~ and now both 
 [[../assets/tcp-states-client.png]]
 *** Server
 [[../assets/tcp-state-server.jpg]]
+** RST flag
+When a server receive a ~SYN~ flag for specific port and on that port, always the server, doesn't have not
