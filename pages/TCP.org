@@ -106,3 +106,17 @@ An initial value for the ~timeout~ is ~1 second~.
 *** Flow Control
 The field ~receive window~ tell to the sender the amount of free space in the buffer of the receiver.
 Since TCP is ~full duplex~ the ~receive window~ is maintained in both way.
+Each buffer keep the following vars:
+1. LastByteRead
+2. LastByteRcvd
+3. RcvBuffer
+To avoid buffer overflow we need that $$LastByteRcvd - LastByteRead \leq RcvBuffer$$.
+The ~window size~ (~receive window~) is calculated with:
+$$rwnd = RcvBuffer - (LastByteRcvd - LastByteRead)$$
+This value is used by the sender to understand how many data it can send.
+The sender keep also this other vars:
+1. LastByteSend
+2. LastByteAcked
+The difference between this 2 indicates the amount of data sended.
+So the sender must ensure that:
+$$LastByteSend - LastByteAcked \leq rwnd$$
