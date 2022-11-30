@@ -193,3 +193,5 @@ Fast Recovery work only relative to the lost
 **** FSM schema 
 As usual all the detail are inside this FSM.
 [[../assets/tcp-congestion-control-old.png]]
+**** Congestion Window's evolution
+[[../assets/tcp-congestion-window-evolutio.png]]
