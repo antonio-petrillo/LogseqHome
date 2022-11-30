@@ -183,7 +183,13 @@ $$MSS\cdot \frac{MSS}{cwnd}$$
 Then it behave like the Slow Start, it keep increase by the previous fraction, if it goes in timeout it ~renter the Congestion Avoidance State~ with ~cwnd/2~.
 If it receive other ~2 duplicate ACK~ (more properly if it reach ~3 duplicate ACK~, remeber that the value can decrease over time), it goes in Fast Recovery.
 **** Fast Recovery
+Either that TCP enter this state from Slow Start or Congestion Control, it set the vars as ~ssthresh = cwnd/2~ and ~cwnd = ssthresh + 3 * MSS~.
 In this case there is a segment loss, hence TCP resend the segment.
 In this phase it increment ~cwd~ by ~1 MSS~ like in Slow Start.
 If Fast Recovery goes in ~timeout~ it goes in *Slow Start* with  ~cwnd = 1~, ~ssthresh = cwnd/2~, ~duplicate ACK count = 0~.
 If a ~new ACK~ is received it return in Congestion Control with ~cwnd = ssthresh~ and ~duplicate ACK count = 0~.
+***** Note
+Fast Recovery work only relative to the lost segment.
+**** FSM schema 
+As usual all the detail are inside this FSM.
+[[../assets/tcp-congestion-control-old.png]]
