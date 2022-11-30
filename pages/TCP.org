@@ -175,6 +175,6 @@ Basically when it notice congestion it should decrease ~cwnd~, in the other case
 TCP start with a ~1 MSS~ send (hence the speed is ~MSS/RTT~), each time it receive a positive ACK (no congestion) it double the number of segment send, hence increase ~MSS * 2~, this means ~exponential growth~.
 When a segment is loss (with an exponential growth we can expect that to happen), TCP save in a var called ~slow start threshold~, aka ~ssthresh~, the value ~cwnd/2~, where cwnd has the same value when the congestion was detected.
 After computing ~ssthresh~ it restart the process of ~doubling the MSS~ as above until it reach the value of ~ssthresh~.
-****** Alternative way to enter ~Congestion Avoidance~ mode.
 ***** Congestion Avoidance
+When TCP enter this mode/state it increment the number of MSS more cautions.
 ***** Fast Recovery
