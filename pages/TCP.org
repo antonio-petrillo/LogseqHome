@@ -172,5 +172,7 @@ Basically when it notice congestion it should decrease ~cwnd~, in the other case
 *** TCP CCA (Congestion Control Algorithm)
 **** Key requirement
 ***** Slow Start
+TCP start with a ~1 MSS~ send (hence the speed is ~MSS/RTT~), each time it receive a positive ACK (no congestion) it double the number of segment send, hence increase ~MSS * 2~, this means ~exponential growth~.
+When there is the first case of
 ***** Congestion Avoidance
 ***** Fast Recovery
