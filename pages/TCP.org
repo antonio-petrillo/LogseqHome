@@ -156,4 +156,7 @@ This is used by [[nmap]] to enumerate the port on a server (it does a lot more t
 * Control Flow
 TCP use an END to END approach for control flow (see ((6386231c-7c65-4e6f-8ac2-ad9aa6e2a8b9)) here).
 *THIS HOLDS IF WE CONSIDER CLASSIC TCP*, the book introduce first /classic TCP/ which use End to End.
-** Approach #TODO
+** Approach 
+TCP use a var ~congestion window~ to alter the ~window size~.
+Usually indicated with ~cwnd~, it is used in the following way
+$$LastByteSend - LastByteAcked \leq  \min\limits_{cwnd, rwnd}$$
