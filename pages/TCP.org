@@ -160,4 +160,17 @@ TCP use an END to END approach for control flow (see ((6386231c-7c65-4e6f-8ac2-a
 TCP use a var ~congestion window~ to alter the ~window size~.
 Usually indicated with ~cwnd~, it is used in the following way
 $$LastByteSend - LastByteAcked \leq  \min \{cwnd, rwnd\}$$
-*** Come calcolare ~cwnd~?
+*** How to estimate the ~cwnd~?
+TCP use some simple guideline
+**** Segment loss
+A segment loss (~timeout~ or ~triple ACK~) imply a congested network.
+When a segment is loss it should adjust the ~cwnd~.
+**** Non duplicate ACK
+When a non duplicate ACK is received, TCP try to increase the ~cwnd~.
+**** A combination of the last 2
+Basically when it notice congestion it should decrease ~cwnd~, in the other case it should increase ~cwnd~.
+*** TCP CCA (Congestion Control Algorithm)
+**** Key requirement
+***** Slow Start
+***** Congestion Avoidance
+***** Fast Recovery
