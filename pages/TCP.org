@@ -159,4 +159,4 @@ TCP use an END to END approach for control flow (see ((6386231c-7c65-4e6f-8ac2-a
 ** Approach 
 TCP use a var ~congestion window~ to alter the ~window size~.
 Usually indicated with ~cwnd~, it is used in the following way
-$$LastByteSend - LastByteAcked \leq  \min\limits_{cwnd, rwnd}$$
+$$LastByteSend - LastByteAcked \leq  \min \{cwnd, rwnd\}$$
