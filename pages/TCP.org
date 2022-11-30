@@ -172,9 +172,13 @@ Basically when it notice congestion it should decrease ~cwnd~, in the other case
 *** TCP CCA (Congestion Control Algorithm)
 **** Key requirement
 ***** Slow Start
-TCP start with a ~1 MSS~ send (hence the speed is ~MSS/RTT~), each time it receive a positive ACK (no congestion) it double the number of segment send, hence increase ~MSS * 2~, this means ~exponential growth~.
+TCP start with a ~1 MSS~ send (hence the speed is ~MSS/RTT~), each time it receive a positive ACK (no congestion) it increment by 1 the number of MSS send, hence increase ~MSS + 1~, this means ~exponential growth~.
 When a segment is loss (with an exponential growth we can expect that to happen), TCP save in a var called ~slow start threshold~, aka ~ssthresh~, the value ~cwnd/2~, where cwnd has the same value when the congestion was detected.
-After computing ~ssthresh~ it restart the process of ~doubling the MSS~ as above until it reach the value of ~ssthresh~.
+After computing ~ssthresh~ it restart the process of ~incrementing MSS~ as above until it reach the value of ~ssthresh~.
+If it receive ~3 ACK~, which means ~NAK~, it goes in fast recovery.
+[[../assets/tcp-slow-start.png]]
 ***** Congestion Avoidance
-When TCP enter this mode/state it increment the number of MSS more cautions.
+When TCP enter this mode/state it increment the number of MSS more cautions, instead of increase by ~1 MSS~ increase by fractions of MSS at each ACK , usually by 
+$$MSS\cdot \frac{MSS}{cwnd}$$
+Then it behave like the Slow Start, it keep increase by the previous fraction, if it goes in timeout it ~renter the Congestion Avoidance State~ with ~cwnd/2~.
 ***** Fast Recovery
