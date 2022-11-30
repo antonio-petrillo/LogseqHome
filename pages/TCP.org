@@ -196,5 +196,14 @@ As usual all the detail are inside this FSM.
 **** Congestion Window's evolution
 [[../assets/tcp-congestion-window-evolutio.png]]
 **** TCP cubic
+Is a more modern TCP's approach at the congestion control.
+See the book at page 231 for more info.
+[[../assets/tcp-cubic-loss-control.png]]
+Here we can see why cubic is preferred to old TCP.
 *** TCP throughput
-To simplify the analisys
+*NOTE*: To simplify the analysis we will ignore the ~Slow Start~.
+ During an interval of ~RTT~, the sending speed is a function of the ~window size~ and the current RTT.
+If ~window size~ is ~w~ then the speed is ~w/RTT~.
+Assume that ~W~ is the value of ~w~ when an event occur, furthermore assume that ~W~ & ~RTT~ are ~approximately constant~, then the we have an upper and lower bound for the TCP transmission: 
+$$TCP's transmission \in [\frac{W}{2\cdot RTT}, \frac{W}{RTT}]$$
+***
