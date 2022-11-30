@@ -173,12 +173,17 @@ Basically when it notice congestion it should decrease ~cwnd~, in the other case
 **** Key requirement
 ***** Slow Start
 TCP start with a ~1 MSS~ send (hence the speed is ~MSS/RTT~), each time it receive a positive ACK (no congestion) it increment by 1 the number of MSS send, hence increase ~MSS + 1~, this means ~exponential growth~.
-When a segment is loss (with an exponential growth we can expect that to happen), TCP save in a var called ~slow start threshold~, aka ~ssthresh~, the value ~cwnd/2~, where cwnd has the same value when the congestion was detected.
+When a segment is loss (with an exponential growth we can expect that to happen), TCP save in a var called ~slow start threshold~, aka ~ssthresh~, the value ~cwnd/2~ where cwnd has the same value when the congestion was detected (usually the default is ~sshthresh = 64 KB~).
 After computing ~ssthresh~ it restart the process of ~incrementing MSS~ as above until it reach the value of ~ssthresh~.
-If it receive ~3 ACK~, which means ~NAK~, it goes in fast recovery.
+If it receive ~3 duplicate ACK~, which means ~NAK~, it goes in fast recovery.
 [[../assets/tcp-slow-start.png]]
 ***** Congestion Avoidance
 When TCP enter this mode/state it increment the number of MSS more cautions, instead of increase by ~1 MSS~ increase by fractions of MSS at each ACK , usually by 
 $$MSS\cdot \frac{MSS}{cwnd}$$
 Then it behave like the Slow Start, it keep increase by the previous fraction, if it goes in timeout it ~renter the Congestion Avoidance State~ with ~cwnd/2~.
-***** Fast Recovery
+If it receive other ~2 duplicate ACK~ (more properly if it reach ~3 duplicate ACK~, remeber that the value can decrease over time), it goes in Fast Recovery.
+**** Fast Recovery
+In this case there is a segment loss, hence TCP resend the segment.
+In this phase it increment ~cwd~ by ~1 MSS~ like in Slow Start.
+If Fast Recovery goes in ~timeout~ it goes in *Slow Start* with  ~cwnd = 1~, ~ssthresh = cwnd/2~, ~duplicate ACK count = 0~.
+If a ~new ACK~ is received it return in Congestion Control with ~cwnd = ssthresh~ and ~duplicate ACK count = 0~.
