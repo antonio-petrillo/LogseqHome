@@ -206,4 +206,6 @@ Here we can see why cubic is preferred to old TCP.
 If ~window size~ is ~w~ then the speed is ~w/RTT~.
 Assume that ~W~ is the value of ~w~ when an event occur, furthermore assume that ~W~ & ~RTT~ are ~approximately constant~, then the we have an upper and lower bound for the TCP transmission: 
 $$TCP's transmission \in [\frac{W}{2\cdot RTT}, \frac{W}{RTT}]$$
+*Remember* this assumption is a simplification of a proper throughput analysis of TCP.
+Know the network delete a segment when connection speed reach $$\frac{W}{RTT}$$, after that the speed will be halved then incremented by
 ***
