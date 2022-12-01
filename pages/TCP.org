@@ -210,5 +210,7 @@ $$TCP's transmission \in [\frac{W}{2\cdot RTT}, \frac{W}{RTT}]$$
 Know the network delete a segment when connection speed reach $$\frac{W}{RTT}$$, after that the speed will be halved then incremented by $$\frac{MSS}{RTT}$$ at each $$RTT$$ until it reach again $$\frac{W}{RTT}$$.
 Since the speed increase linearly between the two bound the mean speed is:
 $$\frac{0.75\cdot W}{RTT}$$
-**** Explicit notification *The Modern Approach* aka *ECN* (Explicit Congestion Notification) #TODO
+**** Explicit notification *The Modern Approach* aka *ECN* (Explicit Congestion Notification)
 In this case both TCP and [[IP]] are involved.
+See page 234.
+*** Fairness
