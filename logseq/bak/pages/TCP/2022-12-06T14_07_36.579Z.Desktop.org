@@ -1,0 +1,214 @@
+* #networking, #protocol
+* Transmission Control Protocol
+Reliable Data Transfer
+* Multiplexing and Demultiplexing
+:PROPERTIES:
+:collapsed: true
+:END:
+** Is more complicated
+TCP use more sophisticated approach than the one described in [[transport layer]].
+This because of how the TCP work, just think about the connection, when a TCP connection is established it create a new socket on which the client can communicate.
+Hence IT need more information.
+** Parameter used
+Other than the ~source port~ and the ~destination port~ it bundle also the ~source IP~ and ~destination IP~.
+With this information extra TCP can distinguish the request and redirect to the correct socket, (basically the host must have a [[map]] of the connections)
+* TCP Connection
+TCP is ~connection oriented~ hence when 2 host want to communicate they need first to establish a connection.
+This connection lives only on the 2 host, the layer below the [[transport layer]] don't know nothing about TCP, they just receive and send datagram.
+TCP is a ~full duplex service~.
+TCP is a ~Point to Point~ connection, it happen only between 2 hosts, a multicast communication is not possible with TCP.
+* Buffers
+[[../assets/tcp_buffers.png]]
+* Maximum Segment Size (MSS)
+Is the size used for a segment there are multiple approach, the most common is the follwing.
+Take the MTU (Maximum Transmission Unit, it come from [[network layer]] ), it is the size of a IP datagram, typically ~1500 bytes~ and remove from it the space for the IP headers, ~40 bytes~, this means that, usually,  the MSS is ~1460 bytes~.
+In this ~1460 bytes~ we should put all the TCP header and also the the data from the [[application layer]].
+Other approach try to compute the size of the largest IP datagram that can surf the network but it is less used.
+* Structure of TCP segment
+** TCP segment
+It is formed by the data (from or directed to the [[application layer]]) encapsulated in a TCP header.
+** Data to large
+When the data from [[application layer]] is to large, TCP slits it in multiple segment and then recompose it on the other side of the connection, always from TCP.
+** TCP header
+It use ~20 bytes~ for the header, instead of [[UDP]] which use ~8 bytes~.
+*** Structure
+:PROPERTIES:
+:id: 6384c27e-ae0a-458a-b685-89439023e26d
+:END:
+[[../assets/tcp_header.png]]
+*** Source port & Dest port
+They are used for multiplexing and demultiplexing.
+*** Internet Checksum
+Detect if the segment is corrupted or not.
+*** Sequence number & Acknowledgment number
+:PROPERTIES:
+:id: 6384c34d-6bed-4930-af71-c6a19c841ae2
+:END:
+Both are of ~16 bit~ (~2 bytes~).
+They are used to create a reliable data transfer, see ((6384ad9d-7872-40af-87f3-a253a10b54db)).
+*** Receive Window
+Used for the ~flow control~, it is ~16 bit~ long.
+Point out the number  of bytes the receiver would accept.
+*** Header length
+TCP segments have a variable length, the header length, of ~4 bit~ specify the TCP header length with ~multiple of 32 bit~.
+The length of the header is variable because there is the Options field, which is variable, before the data.
+Usually the option field is empty, so, the length of a TCP header is, usually, of ~20 bytes~.
+*** Flag field
+It is the part just after the header length and the beginning of receive window.
+This flag are used to identify which kind of operation is required (ACK, SYN, SYN/ACK, FIN, ecc...)
+**** Start and end connection
+ACK, SYN, RST & FIN
+ Are used to start and terminate a connection.
+**** CWR & ECE
+Are used for control flow.
+**** PSH
+ Means that the receiver must push, immediately, the data to the upper level.
+**** URG
+Means that the segment contains data that the sended has marked as *urgent*.
+When this is set the receiver can take the pointer to that urgent data immediately, without need to search the important data in the response, from the field *urgent data pointer*.
+**** In practice
++ In practice PSH and URG are not used, this because when a segment contains important data, usually it is all composed by important data and also it's not job of TCP to hide data, hence that data is anyway ~visible | transparent | not encrypted~
+*** Options field
+Is used to hold specific information, like a non standard MSS, or particular timestamp or other stuff like that.
+** Going deep
+*** Sequence's number & acknowledgment's number
+:LOGBOOK:
+CLOCK: [2022-11-29 Tue 10:26:49]--[2022-11-29 Tue 10:26:50] =>  00:00:01
+:END:
+TCP use the implicit numeration of a stream of byte as sequence number, with this it can understand the order in which they come and reorder them.
+For the ACK there is another approach, the next usable ACK in a TCP communication is the lowest number of bytes received + 1.
+Here an example, it is more explanatory in this case:
+#+BEGIN_EXAMPLE
+Host A send 3 TCP segment, say that goes from [0 - 535] bytes (see sequence' number), the second from [536 - 1023] and the third [1024 - 2048].
+Now B received the first one ([0 - 535]), to ACK the host A is send the ACK number 536 (535 + 1) so  now A knows that the first segment is received by B.
+If A receive an ACK number 1025, it knows that the third segment reached B but it also know that the only one that isn't ACK'D is 537 hence the second segment will be resended.
+#+END_EXAMPLE
+This protocol is known as ~cumulative acknowledgment~.
+**** Example
+[[../assets/tcp_sequence_numbers_example.png]]
+**** Note
+1. In this example I assumed a [[SRP]] in the last part of the example, with [[GBN]] will be a little bit different.
+2. Usually the number of the first ACK segment is picked at random (pseudo-random).
+*** Timeout and RTT (Round Time Trip)
+For each group of segment TCP compute a SampleRTT, the time since one of the segment is given to the [[network layer]] to the time the segment is ACK'd.
+The SampleRTT is not computed for the re transmitted segments.
+The SampleRTT is different on each computation, hence TCP made an estimation called EstimateRTT.
+On each new SampleRTT the EstimateRTT is update in the following way:
+$$EstimateRTT = (1 - \alpha)\cdot EstimateRTT + \alpha\cdot SampleRTT $$
+It is almost the [[Bayes Theorem]] (more like the mutual exclusion possibilities)!
+A common value for $$\alpha$$ is $$0.125$$ aka $$\frac{1}{8}$$
+Since SampleRTT is a mean ([[https://en.wikipedia.org/wiki/Moving_average#:~:text=An%20exponential%20moving%20average%20(EMA,decreases%20exponentially%2C%20never%20reaching%20zero.][link]]), we need also a standard deviation, we call it DevRTT (Deviation RTT).
+$$DevRTT = (1-\beta)\cdot DevRTT + \beta\cdot \mid SampleRTT - EstimatedRTT \mid$$
+A common value for $$\beta$$ is $$0.25$$ aka $$\frac{1}{4}$$.
+Compute the timeout:
+$$timeout = EstimatedRTT + 4\cdot DevRTT$$
+Basically we are asking for value outside of gaussian bell, for abnormal values for the timeout.
+An initial value for the ~timeout~ is ~1 second~.
+*** Flow Control
+The field ~receive window~ tell to the sender the amount of free space in the buffer of the receiver.
+Since TCP is ~full duplex~ the ~receive window~ is maintained in both way.
+Each buffer keep the following vars:
+1. LastByteRead
+2. LastByteRcvd
+3. RcvBuffer
+To avoid buffer overflow we need that $$LastByteRcvd - LastByteRead \leq RcvBuffer$$.
+The ~window size~ (~receive window~) is calculated with:
+$$rwnd = RcvBuffer - (LastByteRcvd - LastByteRead)$$
+This value is used by the sender to understand how many data it can send.
+The sender keep also this other vars:
+1. LastByteSend
+2. LastByteAcked
+The difference between this 2 indicates the amount of data sended.
+So the sender must ensure that:
+$$LastByteSend - LastByteAcked \leq rwnd$$
+* Connection management
+** 3 way handshake
+*** SYN
+The client that want to establish a connection send a TCP request with the ~SYN~ flag set to ~1~, this segment is called ~SYN~, it doesn't contain application data, the initial sequence's number is chosen at random, hence ~seq=client-isn~, where ~client-isn = random~.
+*** SYN/ACK
+When the server receive, remember it can be lost, the server create the buffers and vars for a new TCP connection, then send a respond to the client.
+The respond has the ~SYN~ & ~ACK~ flag set to ~1~, the ~ACK number = client-isn + 1~, while the ~Sequence number~ will be chosen at random, ~seq = server-isn~ where ~server-isn = random~.
+This segment does't contain data from [[application layer]].
+*** ACK
+The client receive the ~SYN/ACK~ segment then it create the buffers and the vars for the TCP connection and then, at last, send a new segment to the server.
+The new segment has ~SYN~ set to ~0~, ~ACK~ set to ~1~ (for this it is called ACK), the ~sequence number~ will be ~client-isn + 1~ while the ~ACK number~ will be ~server-isn+1~.
+*** Schema
+[[../assets/3-way-handshake.png]]
+** Disconnection
+*** Client FIN
+When the client want to interrupt the communication, it send a TCP segment with the flag ~FIN~ set to ~1~.
+*** Server ACK
+When the server receive the ~FIN~ respond with an ~ACK~.
+*** Server FIN
+Right after the ~ACK~ response the server send also his ~FIN~ request
+*** Client ACK
+When the client receive the server ~FIN~ it responds with an ~ACK~ and now both of them start the connection's shutdown (free buffers, vars, etc...).
+*** Schema
+[[../assets/tcp-close-connection.png]]
+** TCP's state
+*** Client
+[[../assets/tcp-states-client.png]]
+*** Server
+[[../assets/tcp-state-server.jpg]]
+** RST flag
+When a server receive a ~SYN~ flag for specific port and on that port, always the server, doesn't have a running program, i.e. ~SYN for port 80~ but there is no web server running, it respond with a packet with ~RST~ flag set to ~1~, so it can inform the client that it has received the connection request, but it can't proceed with the handshake.Server
+This is used by [[nmap]] to enumerate the port on a server (it does a lot more than that).
+* Control Flow
+TCP use an END to END approach for control flow (see ((6386231c-7c65-4e6f-8ac2-ad9aa6e2a8b9)) here).
+*THIS HOLDS IF WE CONSIDER CLASSIC TCP*, the book introduce first /classic TCP/ which use End to End.
+** Approach 
+TCP use a var ~congestion window~ to alter the ~window size~.
+Usually indicated with ~cwnd~, it is used in the following way
+$$LastByteSend - LastByteAcked \leq  \min \{cwnd, rwnd\}$$
+*** How to estimate the ~cwnd~?
+TCP use some simple guideline
+**** Segment loss
+A segment loss (~timeout~ or ~triple ACK~) imply a congested network.
+When a segment is loss it should adjust the ~cwnd~.
+**** Non duplicate ACK
+When a non duplicate ACK is received, TCP try to increase the ~cwnd~.
+**** A combination of the last 2
+Basically when it notice congestion it should decrease ~cwnd~, in the other case it should increase ~cwnd~.
+*** TCP CCA (Congestion Control Algorithm)
+**** Key requirement
+***** Slow Start
+TCP start with a ~1 MSS~ send (hence the speed is ~MSS/RTT~), each time it receive a positive ACK (no congestion) it increment by 1 the number of MSS send, hence increase ~MSS + 1~, this means ~exponential growth~.
+When a segment is loss (with an exponential growth we can expect that to happen), TCP save in a var called ~slow start threshold~, aka ~ssthresh~, the value ~cwnd/2~ where cwnd has the same value when the congestion was detected (usually the default is ~sshthresh = 64 KB~).
+After computing ~ssthresh~ it restart the process of ~incrementing MSS~ as above until it reach the value of ~ssthresh~.
+If it receive ~3 duplicate ACK~, which means ~NAK~, it goes in fast recovery.
+[[../assets/tcp-slow-start.png]]
+***** Congestion Avoidance
+When TCP enter this mode/state it increment the number of MSS more cautions, instead of increase by ~1 MSS~ increase by fractions of MSS at each ACK , usually by 
+$$MSS\cdot \frac{MSS}{cwnd}$$
+Then it behave like the Slow Start, it keep increase by the previous fraction, if it goes in timeout it ~renter the Congestion Avoidance State~ with ~cwnd/2~.
+If it receive other ~2 duplicate ACK~ (more properly if it reach ~3 duplicate ACK~, remeber that the value can decrease over time), it goes in Fast Recovery.
+**** Fast Recovery
+Either that TCP enter this state from Slow Start or Congestion Control, it set the vars as ~ssthresh = cwnd/2~ and ~cwnd = ssthresh + 3 * MSS~.
+In this case there is a segment loss, hence TCP resend the segment.
+In this phase it increment ~cwd~ by ~1 MSS~ like in Slow Start.
+If Fast Recovery goes in ~timeout~ it goes in *Slow Start* with  ~cwnd = 1~, ~ssthresh = cwnd/2~, ~duplicate ACK count = 0~.
+If a ~new ACK~ is received it return in Congestion Control with ~cwnd = ssthresh~ and ~duplicate ACK count = 0~.
+***** Note
+Fast Recovery work only relative to the lost
+**** FSM schema
+As usual all the detail are inside this FSM.
+[[../assets/tcp-congestion-control-old.png]]
+**** Congestion Window's evolution
+[[../assets/tcp-congestion-window-evolutio.png]]
+**** TCP cubic
+Is a more modern TCP's approach at the congestion control.
+See the book at page 231 for more info.
+[[../assets/tcp-cubic-loss-control.png]]
+Here we can see why cubic is preferred to old TCP.
+**** TCP throughput
+*NOTE*: To simplify the analysis we will ignore the ~Slow Start~.
+ During an interval of ~RTT~, the sending speed is a function of the ~window size~ and the current RTT.
+If ~window size~ is ~w~ then the speed is ~w/RTT~.
+Assume that ~W~ is the value of ~w~ when an event occur, furthermore assume that ~W~ & ~RTT~ are ~approximately constant~, then the we have an upper and lower bound for the TCP transmission: 
+$$TCP's transmission \in [\frac{W}{2\cdot RTT}, \frac{W}{RTT}]$$
+*Remember* this assumption is a simplification of a proper throughput analysis of TCP.
+Know the network delete a segment when connection speed reach $$\frac{W}{RTT}$$, after that the speed will be halved then incremented by $$\frac{MSS}{RTT}$$ at each $$RTT$$ until it reach again $$\frac{W}{RTT}$$.
+Since the speed increase linearly between the two bound the mean speed is:
+$$\frac{0.75\cdot W}{RTT}$$
+**** Explicit notification *The Modern Approach* aka *ECN* (Explicit Congestion Notification) #TODO
+In this case both TCP and [[IP]] are involved.
