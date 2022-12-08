@@ -5,3 +5,4 @@ Overall, now, I have a good understanding of [[transport layer]], [[TCP]] & [[UD
 + More exercise on chapter 3
 + I need to improve my knowledge on [[TCP]]'s througput
 * Introduce #[[Learning path]]
+* Introduce #bookshelf

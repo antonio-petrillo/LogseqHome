@@ -1,4 +1,11 @@
 * About this page
 Here I will store /todoes/ for my learning path.
-Each section represent something that I'm studying, the first subsection is the resource from which I\
-*
+Each section represent something that I'm studying, the first subsection is the resource from which I'm studying.
+* [[networking]]
+** [[Computer Networking a Top Down Approach]]
+*** Chapter 3
++ Study [[TCP]] throughput
++ Do more exercise from the book
+** [[http://www.saminiir.com/lets-code-tcp-ip-stack-1-ethernet-arp/][Implement the TCP/IP stack]]
+A guided project to implement TCP/IP in C.
+It's a bottom up approach so I need first to reach layer 2.
