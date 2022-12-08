@@ -1,0 +1,7 @@
+* Start chapter 4 of [[Computer Networking a Top Down Approach]]; [[network layer]]
+* Chapter 3 almost done
+Overall, now, I have a good understanding of [[transport layer]], [[TCP]] & [[UDP]]
+** #[[Learning path]]:
++ More exercise on chapter 3
++ I need to improve my knowledge on [[TCP]]'s througput
+* Introduce #[[Learning path]]
