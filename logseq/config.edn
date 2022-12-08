@@ -319,4 +319,5 @@
  ;;     ;parse `.` in file name as slash `/` in page title
  :file/name-format :triple-lowbar
  :journal/page-title-format "EEEE, dd.MM.yyyy"
+ :graph/settings {:journal? true, :excluded-pages? true}
  }

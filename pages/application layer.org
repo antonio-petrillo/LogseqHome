@@ -1,2 +1,7 @@
 * #networking, #todo
+* Layer above the [[transport layer]], here live most famous and used protocol, like:
++ [[HTTP]]
++ [[SMTP]]
++ [[DNS]]
++ [[SSH]]
 *
