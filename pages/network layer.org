@@ -1,1 +1,7 @@
 * #networking, #todo
+* Where it lives?
+This layer is found in 2 places, the host and the router, this make it a bit hard to understand at first.
+Internally it could be divided in *data plane* and *control plane*.
+* Overview
+[[../assets/network-layer-overview.png]]
+*
