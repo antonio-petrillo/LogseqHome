@@ -21,4 +21,4 @@ What it guarantees:
 2. minimum bandwidth not guaranteed
 3. ordered delivery not guaranteed (the packets are delivered in the same order they are sended)
 4. it offer encryption services
-*
+* What's inside a router
