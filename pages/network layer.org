@@ -2,7 +2,12 @@
 * Where it lives?
 This layer is found in 2 places, the host and the router, this make it a bit hard to understand at first.
 Internally it could be divided in *data plane* and *control plane*.
+The *control plane* compute a *forwarding table* (generated through *Routing* algos) that will be used by the *data plane* to forward (*forwarding*) the data.
 * Overview
 [[../assets/network-layer-overview.png]]
 * Control and Data plane separation 2 approach
-** Routing algorithm inside the router
+** Control plane inside the router
+[[../assets/control-plane-inside-the-router.jpg]]
+** Control plane on a remote server
+[[../assets/control-plane-Software-Defined_Networking_SDN.jpg]]
+**
