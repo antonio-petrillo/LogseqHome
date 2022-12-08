@@ -16,8 +16,9 @@ The *control plane* compute a *forwarding table* (generated through *Routing* al
 :id: 6391b780-70e0-4704-b235-94fe1087e2e4
 :END:
 The network layer offer a service called *Bets Effort*.
-What it :
+What it guarantees:
 1. deliver not guaranteed
-2. ca
-***
+2. minimum bandwidth not guaranteed
+3. ordered delivery not guaranteed (the packets are delivered in the same order they are sended)
+4. it offer encryption services
 *
