@@ -4,4 +4,5 @@ This layer is found in 2 places, the host and the router, this make it a bit har
 Internally it could be divided in *data plane* and *control plane*.
 * Overview
 [[../assets/network-layer-overview.png]]
-*
+* Control and Data plane separation 2 approach
+** Routing algorithm inside the router
