@@ -22,3 +22,9 @@ What it guarantees:
 3. ordered delivery not guaranteed (the packets are delivered in the same order they are sended)
 4. it offer encryption services
 * What's inside a router
+** Overview
+[[../assets/router-architecture-overview.png]]
+** Input Port
+** Switching Fabric
+** Output Port
+** Routing Processor
