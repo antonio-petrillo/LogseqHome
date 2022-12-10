@@ -35,6 +35,8 @@ Let me explain with an analogy:
 2. before you can proceed you must say at toll booth where you are going 
 3. the employee tell you which you have to take in the roundabout
 ** Input Port
+When a segment reach an import port it is routed to the correct output port through the switch fabric using a forwarding table made by the routing processor.
+After the first segment of a stream get an output port, a copy of the forwarding table is stored in the input port so the next segments can go faster.
 ** Switching Fabric
 It connect, *physically*, the input port with the output port, basically it's a network (inside another network).
 ** Output Port
