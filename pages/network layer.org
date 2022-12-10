@@ -39,3 +39,5 @@ Let me explain with an analogy:
 It connect, *physically*, the input port with the output port, basically it's a network (inside another network).
 ** Output Port
 ** Routing Processor
+Execute the *Control Plane* function, both classic router and SDN operates here.
+**
