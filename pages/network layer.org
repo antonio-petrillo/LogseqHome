@@ -27,7 +27,10 @@ As you can evince from the overview, the lower part, input port, output port and
 [[../assets/router-architecture-overview.png]]
 ** Input Port
 *** Destination based forwarding
-Let me explain with an analogy
+Let me explain with an analogy:
+1. before you enter a roundabout there is a road toll booth.
+2. before you can proceed you must say at toll booth where you are going 
+3. the employee tell you which
 ** Switching Fabric
 ** Output Port
 ** Routing Processor
