@@ -15,7 +15,7 @@ The *control plane* compute a *forwarding table* (generated through *Routing* al
 :PROPERTIES:
 :id: 6391b780-70e0-4704-b235-94fe1087e2e4
 :END:
-The network layer offer a service called *Bets Effort*.
+The network layer offer a service called *Best Effort*.
 What it guarantees:
 1. deliver not guaranteed
 2. minimum bandwidth not guaranteed
@@ -23,7 +23,7 @@ What it guarantees:
 4. it offer encryption services
 * What's inside a router
 ** Overview
-As you can evince from the overview, the 
+As you can evince from the overview, the lower part, input port, output port and switch fabric are implemented in hardware, this is a requirement to reach the maximum speed.
 [[../assets/router-architecture-overview.png]]
 ** Input Port
 ** Switching Fabric
