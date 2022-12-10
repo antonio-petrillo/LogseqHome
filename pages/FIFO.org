@@ -1,0 +1,4 @@
+* #todo, #algorithm, #technique
+* First In First Out
+Aka ~FCFS~ (First Come First Served).
+Approach used by the standard ~stack~.

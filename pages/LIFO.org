@@ -1,0 +1,3 @@
+* #todo, #algorithm, #technique
+* Last In Last Out
+Approach used by the standard ~queue~.

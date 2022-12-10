@@ -60,5 +60,5 @@ $BuffSize = RTT\cdot \frac{C}{\sqrt{N}}$
 ***
 * Packet Scheduling
 As always there are more than one solution:
-+ Good old FIFO (aka FCFS - FIRST-COME-FIRST-)
++ Good old [[FIFO]](aka FCFS - First-Come-First-Served)
 +
