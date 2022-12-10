@@ -26,6 +26,7 @@ What it guarantees:
 As you can evince from the overview, the lower part, input port, output port and switch fabric are implemented in hardware, this is a requirement to reach the maximum speed.
 [[../assets/router-architecture-overview.png]]
 ** Input Port
+*** Destination based forwarding
 ** Switching Fabric
 ** Output Port
 ** Routing Processor
