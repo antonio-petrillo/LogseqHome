@@ -23,6 +23,7 @@ What it guarantees:
 4. it offer encryption services
 * What's inside a router
 ** Overview
+As you can evince from the overview, the 
 [[../assets/router-architecture-overview.png]]
 ** Input Port
 ** Switching Fabric
