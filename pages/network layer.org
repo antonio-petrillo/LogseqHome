@@ -53,4 +53,5 @@ $BuffSize = RTT\cdot \frac{C}{\sqrt{N}}$
 *** Note
 + A  buffer to big will increase the ~queuing time~.
 + A buffer full of TCP connection will have a rough time to free space in the buffer, after an ACK a new segment will come and /re-full/ the buffer.
-**
++ This problem is known as ~bufferbloat~
+***
