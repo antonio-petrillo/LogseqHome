@@ -22,32 +22,29 @@ What it guarantees:
 3. ordered delivery not guaranteed (the packets are delivered in the same order they are sended)
 4. it offer encryption services
 * What's inside a router
-:PROPERTIES:
-:collapsed: true
-:END:
 ** For an in depth study see page 255 of [[Computer Networking a Top Down Approach]].
 ** Overview
 As you can evince from the overview, the lower part, input port, output port and switch fabric are implemented in hardware, this is a requirement to reach the maximum speed.
 [[../assets/router-architecture-overview.png]]
 ** Forwarding approachs
 *** Generalized forwarding
-There are some rule that are used to forward the packet.
-I.E. the packet for a google resource must take the first output port and the packet for Microsoft Outlook must go to the third output port.
+There are some rule that are used to forward the segment.
+I.E. the segment for a google resource must take the first output port and the segment for Microsoft Outlook must go to the third output port.
 *** Destination based forwarding
 Let me explain with an analogy:
 1. before you enter a roundabout there is a road toll booth.
 2. before you can proceed you must say at toll booth where you are going 
 3. the employee tell you which you have to take in the roundabout
 ** Input Port
-When a packet reach an import port it is routed to the correct output port through the switch fabric using a forwarding table made by the routing processor.
-After the first packet of a stream get an output port, a copy of the forwarding table is stored in the input port so the next packets can go faster.
+When a segment reach an import port it is routed to the correct output port through the switch fabric using a forwarding table made by the routing processor.
+After the first segment of a stream get an output port, a copy of the forwarding table is stored in the input port so the next segments can go faster.
 ** Switching Fabric
 It connect, *physically*, the input port with the output port, basically it's a network (inside another network).
 ** Output Port
 ** Routing Processor
 Execute the *Control Plane* function, both classic router and SDN operates here.
 ** Buffers size (input & output)
-When a packet cannot be instantly consumed it is stored in a buffer, when this kind of buffers are full the packet is dropped (this what cause packet loss in the upper layers).
+When a segment cannot be instantly consumed it is stored in a buffer, when this kind of buffers are full the segment is dropped (this what cause packet loss in the upper layers).
 So how big the buffers should be?
 *** A classical approach suggest:
 $Buff Size = RTT\cdot C$, where ~RTT~ is the ~Round Time Trip~ and ~C~ is the ~link capacity~.
@@ -55,10 +52,6 @@ $Buff Size = RTT\cdot C$, where ~RTT~ is the ~Round Time Trip~ and ~C~ is the ~l
 $BuffSize = RTT\cdot \frac{C}{\sqrt{N}}$
 *** Note
 + A  buffer to big will increase the ~queuing time~.
-+ A buffer full of TCP connection will have a rough time to free space in the buffer, after an ACK a new packet will come and /re-full/ the buffer.
++ A buffer full of TCP connection will have a rough time to free space in the buffer, after an ACK a new segment will come and /re-full/ the buffer.
 + This problem is known as ~bufferbloat~
 ***
-* Packet Scheduling
-As always there are more than one solution:
-+ Good old FIFO (aka FCFS - FIRST-COME-FIRST-)
-+
