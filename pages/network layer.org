@@ -25,12 +25,17 @@ What it guarantees:
 ** Overview
 As you can evince from the overview, the lower part, input port, output port and switch fabric are implemented in hardware, this is a requirement to reach the maximum speed.
 [[../assets/router-architecture-overview.png]]
-** Input Port
+** Forwarding approachs
+*** Generalized forwarding
+There are some rule that are used to forward the segment.
+I.E. the segment for a google resource must take the first output port and the segment for Microsoft Outlook must go to the third output port.
 *** Destination based forwarding
 Let me explain with an analogy:
 1. before you enter a roundabout there is a road toll booth.
 2. before you can proceed you must say at toll booth where you are going 
-3. the employee tell you which
+3. the employee tell you which you have to take in the roundabout
+** Input Port
 ** Switching Fabric
+It connect, *physically*, the input port with the output port, basically it's a network (inside another network).
 ** Output Port
 ** Routing Processor
