@@ -27,6 +27,7 @@ As you can evince from the overview, the lower part, input port, output port and
 [[../assets/router-architecture-overview.png]]
 ** Input Port
 *** Destination based forwarding
+Let me explain with an analogy
 ** Switching Fabric
 ** Output Port
 ** Routing Processor
