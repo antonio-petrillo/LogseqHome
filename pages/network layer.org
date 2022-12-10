@@ -43,4 +43,9 @@ It connect, *physically*, the input port with the output port, basically it's a 
 ** Output Port
 ** Routing Processor
 Execute the *Control Plane* function, both classic router and SDN operates here.
+** Buffers size (input & output)
+When a segment cannot be instantly consumed it is stored in a buffer, when this kind of buffers are full the segment is dropped (this what cause packet loss in the upper layers).
+So how big the buffers should be?
++ A classical approach suggest:
+$$Buff Size = RTT * C$$, where ~RTT~ is the ~Round Time Trip~ and ~C~ is the ~link capat~
 **
