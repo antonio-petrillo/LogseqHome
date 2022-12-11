@@ -131,5 +131,12 @@ Since that both router and host can send and receive datagram IP *require* that 
 This mean that:
 ~An IP address is associated with an interface, not with a single host~
 *** IPv4 address
-They are 32 bit long
+They are 32 bit long, hence there are $2^{32}$  possible IPs.
+They are described with a dotted decimal notation.
+#+BEGIN_EXAMPLE
+IP := 192.32.216.9 <==> 11000001 00100000 11011000 00001001
+#+END_EXAMPLE
+All the devices connected to Internet have an unique IP, except the devices manged by NAT (see later).
+That IP can't be chosen at random.
+IP address have a ~subnet mask~ used to create subnet
 ** IPv6
