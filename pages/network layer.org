@@ -140,4 +140,6 @@ All the devices connected to Internet have an unique IP, except the devices mang
 That IP can't be chosen at random.
 IP address have a ~subnet mask~ used to create subnet, also called ~IP network~.
 [[../assets/ipv4-interfaces-and-subnetting.png]]
+See [[ipcalc]] for an intro on how to calculate subnets.
+*** ~Classless InterDomain Routing~ aka
 ** IPv6

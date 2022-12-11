@@ -1,0 +1,14 @@
+* #cli, #tool, #networking, #[[network layer]]
+* It's a tool to calculate subnets:
+#+BEGIN_SRC shell
+[nto@fedora ~]$ ipcalc 192.168.1.1/24
+Address:	192.168.1.1
+Network:	192.168.1.0/24
+Netmask:	255.255.255.0 = 24
+Broadcast:	192.168.1.255
+
+Address space:	Private Use
+HostMin:	192.168.1.1
+HostMax:	192.168.1.254
+Hosts/Net:	254
+#+END_SRC
