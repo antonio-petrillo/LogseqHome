@@ -106,4 +106,5 @@ Used only on high end router.
 Data from/to the layer above.
 In the case of [[TCP]] we have ~20 bytes~ for the IP header and ~20 bytes~ for the [[TCP]] header, hence for the payload we have $MTU - 40 bytes$ (since the MTU is usually ~1500 bytes~ we get that the payload could be, at most ~1460 bytes~).
 *** IPv4 routing
+Usually an host have only one link with the network
 ** IPv6
