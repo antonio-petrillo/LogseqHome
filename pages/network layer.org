@@ -65,5 +65,6 @@ As always there are more than one solution:
 Each packet is label with a priority level.
 Each priority class has his own queue.
 If the queue is ~not preemptive~ it is not possible to interrupt the forwarding of a packet.
+The priority levels and classes are decided by the ISP.
 ** Round Robin
 The packets are divided in groups and served in a Round Robin style
