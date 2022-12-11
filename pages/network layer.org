@@ -149,4 +149,6 @@ The first part, the ~x bits~ are used to create the ~forwarding table~.
 Examples:
 ~192.168.1.0/24~, 24 bit are for the network, hence ~192.168.1.0~ is network name and the number from ~192.168.1.1~ to ~192.168.1.255~ can be used for the hosts.
 We will see later that some address are already taken for some purpose.
+** ~Broadcast IP~
+When a datagram is sended to ~255.255.255.255~ it is sended to all the hosts on the network, this is called ~Broadcast IP~.
 * IPv6
