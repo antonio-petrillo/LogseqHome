@@ -74,30 +74,36 @@ Then each class is served round robin style.
 * IP
 ** IPv4
 The packet at the ~network layer~ is known as ~DATAGRAM~.
-*** Overview
+*** Datagram Structure
 [[../assets/ipv4-datagram.png]]
-*** ~Version~ 4 bit
+**** ~Version~ 4 bit
 Contains an identifier that allow the router to recognize correctly the datagram.
-*** ~Header length~ 4 bit
+**** ~Header length~ 4 bit
 All the fields of an IPv4 datagram have a fixed length except for the option header which could vary.
 Typically an IP datagram doesn't have extra options, this means that usually an IP datagram is 20 bytes long.
-*** ~Type of service~ 8 bit
+**** ~Type of service~ 8 bit
 Aka ~TOS~, it's used to distinguish  between datagram that need low latency, i.e. ~VoIP~, or a datagram that don't prioritize latency, like ~FTP~.
 ~2 bit~ of the TOS are used to explicitly notify the upper layer that there is congestion on the network.
 Don't confuse this with the type of protocol used.
-*** ~Datagram length~ 16 bit
+**** ~Datagram length~ 16 bit
 Total length of the IP datagram, they can vary from 0 (useless!) to 65355 (to big!).
 The most common size is ~1500~ (see ((638f4ca9-1e6c-47be-b5c4-68b7dfcfc0f7)) in particular the ~MTU~).
 1500 is preferred because it is the maximum size for a ~Ethernet frame~ on the [[link layer]] (the layer below).
-*** ~Identifier, Flag & fragmentation offset~ (16 + 3 + 13) bit
+**** ~Identifier, Flag & fragmentation offset~ (16 + 3 + 13) bit
 [[TODO]]
-*** ~TTL~ 8 bit
-*** ~Protocol~ 8 bit
+**** ~TTL~ 8 bit
+**** ~Protocol~ 8 bit
 This field is used when the datagram reaches the destination.
 Specify which protocol should receive the data, for example the value ~6~ specify ~TCP~, ~17~ ~UDP~, and so on (see ~IANA Protocol Numbers 2016~).
-*** ~Checksum~ 16 bit
+**** ~Checksum~ 16 bit
 The IP checksum is applied only to the header, essentially is equal to ((63847bd7-3bb8-4a68-abf6-4ff167421a32)) in [[UDP]].
 The checksum is computed as ~sum of 1 complement of each 8 byte in the header~, the router that receive the datagram re-compute the checksum an try to match to the stored one.
-*** ~Source IP~ & ~Destination IP~
-When an host send a datagram it put the destination IP in the ~destination field~ and it's own
+**** ~Source IP~ & ~Destination IP~
+When an host send a datagram it put the destination IP in the ~destination field~ and it's own IP in the ~source field~.
+**** ~Options~
+Used only on high end router.
+**** ~Data~ or ~Payload~
+Data from/to the layer above.
+In the case of [[TCP]] we have ~20 bytes~ for the IP header and ~20 bytes~ for the [[TCP]] header, hence for the payload we have $MTU - 40 bytes$ (since the MTU is usually ~1500 bytes~ we get that the payload could be, at most ~1460 bytes~).
+*** IPv4 routing
 ** IPv6
