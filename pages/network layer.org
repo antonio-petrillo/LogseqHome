@@ -96,4 +96,8 @@ The most common size is ~1500~ (see ((638f4ca9-1e6c-47be-b5c4-68b7dfcfc0f7)) in 
 This field is used when the datagram reaches the destination.
 Specify which protocol should receive the data, for example the value ~6~ specify ~TCP~, ~17~ ~UDP~, and so on (see ~IANA Protocol Numbers 2016~).
 *** ~Checksum~ 16 bit
+The IP checksum is applied only to the header, essentially is equal to ((63847bd7-3bb8-4a68-abf6-4ff167421a32)) in [[UDP]].
+The checksum is computed as ~sum of 1 complement of each 8 byte in the header~, the router that receive the datagram re-compute the checksum an try to match to the stored one.
+*** ~Source IP~ & ~Destination IP~
+When an host send a datagram it put the destination IP in the ~destination field~ and it's own
 ** IPv6
