@@ -73,5 +73,5 @@ Then each class is served round robin style.
 [[../assets/wfq.png]]
 * IP
 ** IPv4
-The packet at the ~network layer~ is know
+The packet at the ~network layer~ is known as ~DATAGRAM~.
 ** IPv6
