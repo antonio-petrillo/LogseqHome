@@ -60,5 +60,10 @@ $BuffSize = RTT\cdot \frac{C}{\sqrt{N}}$
 ***
 * Packet Scheduling
 As always there are more than one solution:
-+ Good old [[FIFO]](aka FCFS - First-Come-First-Served)
-+
+** Good old [[FIFO]] (aka FCFS - First-Come-First-Served)
+** Priority Queue
+Each packet is label with a priority level.
+Each priority class has his own queue.
+If the queue is ~not preemptive~ it is not possible to interrupt the forwarding of a packet.
+** Round Robin
+The packets are divided in groups and served in a Round Robin style
