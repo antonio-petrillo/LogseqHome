@@ -18,7 +18,7 @@ This connection lives only on the 2 host, the layer below the [[transport layer]
 TCP is a ~full duplex service~.
 TCP is a ~Point to Point~ connection, it happen only between 2 hosts, a multicast communication is not possible with TCP.
 * Buffers
-[[../assets/tcp_buffers.png]]
+[[../assets/tcp_buffers.png]]{:height 253, :width 589}
 * Maximum Segment Size (MSS)
 Is the size used for a segment there are multiple approach, the most common is the follwing.
 Take the MTU (Maximum Transmission Unit, it come from [[network layer]] ), it is the size of a IP datagram, typically ~1500 bytes~ and remove from it the space for the IP headers, ~40 bytes~, this means that, usually,  the MSS is ~1460 bytes~.
@@ -205,7 +205,7 @@ Here we can see why cubic is preferred to old TCP.
  During an interval of ~RTT~, the sending speed is a function of the ~window size~ and the current RTT.
 If ~window size~ is ~w~ then the speed is ~w/RTT~.
 Assume that ~W~ is the value of ~w~ when an event occur, furthermore assume that ~W~ & ~RTT~ are ~approximately constant~, then the we have an upper and lower bound for the TCP transmission: 
-$$TCP's transmission \in [\frac{W}{2\cdot RTT}, \frac{W}{RTT}]$$
+$$TCP transmission \in [\frac{W}{2\cdot RTT}, \frac{W}{RTT}]$$
 *Remember* this assumption is a simplification of a proper throughput analysis of TCP.
 Know the network delete a segment when connection speed reach $$\frac{W}{RTT}$$, after that the speed will be halved then incremented by $$\frac{MSS}{RTT}$$ at each $$RTT$$ until it reach again $$\frac{W}{RTT}$$.
 Since the speed increase linearly between the two bound the mean speed is:

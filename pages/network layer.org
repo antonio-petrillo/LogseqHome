@@ -80,5 +80,7 @@ The packet at the ~network layer~ is known as ~DATAGRAM~.
 Contains an identifier that allow the router to recognize correctly the datagram.
 *** ~Header length~ 4 bit
 All the fields of an IPv4 datagram have a fixed length except for the option header which could vary.
-Typically an IP datagram doesn't have extra options
+Typically an IP datagram doesn't have extra options, this means that usually an IP datagram is 20 bytes long.
+*** ~Type of service~ 8 bit
+Aka ~TOS~, it s
 ** IPv6
