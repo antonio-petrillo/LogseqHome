@@ -88,5 +88,7 @@ Aka ~TOS~, it's used to distinguish  between datagram that need low latency, i.e
 Total length of the IP datagram, they can vary from 0 (useless!) to 65355 (to big!).
 The most common size is ~1500~ (see ((638f4ca9-1e6c-47be-b5c4-68b7dfcfc0f7)) in particular the ~MTU~).
 1500 is preferred because it is the maximum size for a ~Ethernet frame~ on the [[link layer]] (the layer below).
-***
+*** ~Identifier, Flag & fragmentation offset~ (16 + 3 + 13) bit
+[[TODO]]
+*** ~TTL~
 ** IPv6
