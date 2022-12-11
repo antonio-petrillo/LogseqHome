@@ -74,4 +74,6 @@ Then each class is served round robin style.
 * IP
 ** IPv4
 The packet at the ~network layer~ is known as ~DATAGRAM~.
+*** Overview
+[[../assets/ipv4-datagram.png]]
 ** IPv6
