@@ -138,5 +138,6 @@ IP := 192.32.216.9 <==> 11000001 00100000 11011000 00001001
 #+END_EXAMPLE
 All the devices connected to Internet have an unique IP, except the devices manged by NAT (see later).
 That IP can't be chosen at random.
-IP address have a ~subnet mask~ used to create subnet
+IP address have a ~subnet mask~ used to create subnet, also called ~IP network~.
+[[../assets/ipv4-interfaces-and-subnetting.png]]
 ** IPv6
