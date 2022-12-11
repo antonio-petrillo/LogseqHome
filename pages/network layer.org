@@ -84,11 +84,16 @@ Typically an IP datagram doesn't have extra options, this means that usually an 
 *** ~Type of service~ 8 bit
 Aka ~TOS~, it's used to distinguish  between datagram that need low latency, i.e. ~VoIP~, or a datagram that don't prioritize latency, like ~FTP~.
 ~2 bit~ of the TOS are used to explicitly notify the upper layer that there is congestion on the network.
+Don't confuse this with the type of protocol used.
 *** ~Datagram length~ 16 bit
 Total length of the IP datagram, they can vary from 0 (useless!) to 65355 (to big!).
 The most common size is ~1500~ (see ((638f4ca9-1e6c-47be-b5c4-68b7dfcfc0f7)) in particular the ~MTU~).
 1500 is preferred because it is the maximum size for a ~Ethernet frame~ on the [[link layer]] (the layer below).
 *** ~Identifier, Flag & fragmentation offset~ (16 + 3 + 13) bit
 [[TODO]]
-*** ~TTL~
+*** ~TTL~ 8 bit
+*** ~Protocol~ 8 bit
+This field is used when the datagram reaches the destination.
+Specify which protocol should receive the data, for example the value ~6~ specify ~TCP~, ~17~ ~UDP~, and so on (see ~IANA Protocol Numbers 2016~).
+*** ~Checksum~ 16 bit
 ** IPv6
