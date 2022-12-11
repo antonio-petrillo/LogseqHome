@@ -82,5 +82,11 @@ Contains an identifier that allow the router to recognize correctly the datagram
 All the fields of an IPv4 datagram have a fixed length except for the option header which could vary.
 Typically an IP datagram doesn't have extra options, this means that usually an IP datagram is 20 bytes long.
 *** ~Type of service~ 8 bit
-Aka ~TOS~, it s
+Aka ~TOS~, it's used to distinguish  between datagram that need low latency, i.e. ~VoIP~, or a datagram that don't prioritize latency, like ~FTP~.
+~2 bit~ of the TOS are used to explicitly notify the upper layer that there is congestion on the network.
+*** ~Datagram length~ 16 bit
+Total length of the IP datagram, they can vary from 0 (useless!) to 65355 (to big!).
+The most common size is ~1500~ (see ((638f4ca9-1e6c-47be-b5c4-68b7dfcfc0f7)) in particular the ~MTU~).
+1500 is preferred because it is the maximum size for a ~Ethernet frame~ on the [[link layer]] (the layer below).
+***
 ** IPv6

@@ -20,6 +20,9 @@ TCP is a ~Point to Point~ connection, it happen only between 2 hosts, a multicas
 * Buffers
 [[../assets/tcp_buffers.png]]{:height 253, :width 589}
 * Maximum Segment Size (MSS)
+:PROPERTIES:
+:id: 638f4ca9-1e6c-47be-b5c4-68b7dfcfc0f7
+:END:
 Is the size used for a segment there are multiple approach, the most common is the follwing.
 Take the MTU (Maximum Transmission Unit, it come from [[network layer]] ), it is the size of a IP datagram, typically ~1500 bytes~ and remove from it the space for the IP headers, ~40 bytes~, this means that, usually,  the MSS is ~1460 bytes~.
 In this ~1460 bytes~ we should put all the TCP header and also the the data from the [[application layer]].
