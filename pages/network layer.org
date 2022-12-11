@@ -141,5 +141,12 @@ That IP can't be chosen at random.
 IP address have a ~subnet mask~ used to create subnet, also called ~IP network~.
 [[../assets/ipv4-interfaces-and-subnetting.png]]
 See [[ipcalc]] for an intro on how to calculate subnets.
-*** ~Classless InterDomain Routing~ aka
-** IPv6
+** ~Classless InterDomain Routing~ aka ~CIDR~
+It is a generalization of the subnetting concept.
+The IP is, as before, represented with a dotted decimal notation with an extra ~/xx~ which represent the number of bit used to identify the network name, the remaining $32 - xx $ bit can be used to identify hosts on the network.
+Visually ~a.b.c.d/xx~, here ~a.b.c.d~ is the IP and ~/xx~ are the bit used to identify the network.
+The first part, the ~x bits~ are used to create the ~forwarding table~.
+Examples:
+~192.168.1.0/24~, 24 bit are for the network, hence ~192.168.1.0~ is network name and the number from ~192.168.1.1~ to ~192.168.1.255~ can be used for the hosts.
+We will see later that some address are already taken for some purpose.
+* IPv6
