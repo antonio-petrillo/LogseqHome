@@ -106,5 +106,30 @@ Used only on high end router.
 Data from/to the layer above.
 In the case of [[TCP]] we have ~20 bytes~ for the IP header and ~20 bytes~ for the [[TCP]] header, hence for the payload we have $MTU - 40 bytes$ (since the MTU is usually ~1500 bytes~ we get that the payload could be, at most ~1460 bytes~).
 *** IPv4 routing
-Usually an host have only one link with the network
+Usually an host have only one link with the network.
+The border between an host and a physical link is called ~interface~, see ~ip a ~
+#+BEGIN_SRC shell
+[nto@fedora ~]$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: enp2s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN group default qlen 1000
+    link/ether ***************************************
+3: wlp4s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether ***************************************
+    inet 192.168.123.140/24 brd 192.168.123.255 scope global dynamic noprefixroute wlp4s0
+       valid_lft 2465sec preferred_lft 2465sec
+    inet6 ***************************** scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+#+END_SRC
+On the other hand a router must be connected to ~at least 2 link~.
+The /borders/ on a router are also called ~interfaces~.
+Since that both router and host can send and receive datagram IP *require* that each interfaces must have an ~IP address~.
+This mean that:
+~An IP address is associated with an interface, not with a single host~
+*** IPv4 address
+They are 32 bit long
 ** IPv6
