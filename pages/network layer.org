@@ -63,8 +63,9 @@ As always there are more than one solution:
 ** Good old [[FIFO]] (aka FCFS - First-Come-First-Served)
 ** Priority Queue
 Each packet is label with a priority level.
-Each priority class has his own queue.
+Each priority class has his own queue, i.e. HTTP has more priority than SSH, SSH more than IMAP and so on.
 If the queue is ~not preemptive~ it is not possible to interrupt the forwarding of a packet.
 The priority levels and classes are decided by the ISP.
-** Round Robin
-The packets are divided in groups and served in a Round Robin style
+** Round Robin & WFQ
+~WRQ := Weighted Fair Queueing~
+The packets are divided into class, without a rigid service priority.
