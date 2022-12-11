@@ -69,3 +69,9 @@ The priority levels and classes are decided by the ISP.
 ** Round Robin & WFQ
 ~WRQ := Weighted Fair Queueing~
 The packets are divided into class, without a rigid service priority.
+Then each class is served round robin style.
+[[../assets/wfq.png]]
+* IP
+** IPv4
+The packet at the ~network layer~ is know
+** IPv6
