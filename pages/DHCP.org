@@ -14,4 +14,12 @@ A newly connected host send a ~DHCP request~ in particular it send a ~DHCP disco
 on the port reserved to DHCP, aka the ~port 67~ (the request runs on [[UDP]]).
 Since an IP datagram require the IP address of the sender, in the offer is used the addres ~0.0.0.0~.
 ** DHCP ~Offer~
-Once the server receive the ~discover~ request it send back an offer (he)
+Once the server receive the ~discover~ request it send back an offer (hence the name) with an _offer of IP address_.
+In the offer there are specified the ~IP of the server~,  a ~IP address~ candidate, a lifetime, a transaction ID, and other info on how the network is configured.
+*** Why Server IP and transaction ID?
+On the network there could be multiple DHCP server hence a new client can get multiple offer from which it can chose.
+** DHCP ~Request~
+This message is used to accept one of the possible offers.
+The message is sended broadcast but now it contains the DHCP server id (basically the IP) and the transaction ID so the server can understand which host is accepting the offer (remember there could be multiple host that connect at the same time to the network).
+** DHCP ~Ack~
+The server notify the client and know the client can use the newly assigned IP.
