@@ -205,3 +205,4 @@ C, D with IPv4
 When B want to send a message to E or F, it wrap its datagram in a IPv4 datagram, in this case the ~TOS~ is not an upper layer but IPv6, and send it through C.
 Then D send to E, E unpack the IPv6 datagram and proceed.
 #+END_EXAMPLE
+**
