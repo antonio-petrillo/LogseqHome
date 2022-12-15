@@ -193,5 +193,14 @@ When a router receive a datagram to big send an [[ICMP]] (i.e. datagram to big) 
 This work done on the end system is cheaper.
 *** No more Option
 *** The IPv6 datagram is smaller than IPv4
+*** Interoperability with IPv4
+IPv6 is retrocompatible with IPv4, the viceversa is not true.
 ** From IPv4 to IPv6
 This transition is quite difficult, the easiest way is to choice a day in which the whole internet will be powered off and do the upgrade, but this is quite problematic as solution.
+A less drastic solution is to use ~tunneling~, it's easy to explain with an example:
+#+BEGIN_EXAMPLE
+Imagine a chain of router that want to communicate, say they are: A, B, C, D, E, F
+A, B, E, F works with IPv6
+C, D with IPv4
+When B want to send a message to E or F, it wrap its datagram in a IPv4 datagram and send it through C.
+#+END_EXAMPLE
