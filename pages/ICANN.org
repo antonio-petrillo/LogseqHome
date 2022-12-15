@@ -1,0 +1,7 @@
+* #non-profit, #company, #networking
+* ~Internet Corporation for Assigned Names and Numbers~
+It take care of assign IP's blocks to ISPs (and also to manage [[DNS]] root server).
+* Links
++ [[https://www.icann.org/][ICANN website]]
++ [[https://www.icann.org/resources/pages/what-2012-02-25-en][What Does ICANN Do?]], explain what ICANN does
++ [[https://en.wikipedia.org/wiki/ICANN][ICANN wikipedia page]]
