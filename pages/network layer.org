@@ -178,12 +178,20 @@ The protocol that will use the data in the payload.
 *** ~Hop limit~
 A new form of ~TTL~, each time a datagram go through a new host the hop limit is decreased, when reaches ~0~ the datagram is discarded.
 *** ~Source addr~ & ~Dest. addr~
-Selfexplanatory
+Selfexplanatory.
+They are 128 bit long so there is no problem of shortage of IPs.
 *** ~Data~
 The payload
 ** Notes on IPv6
 *** No checksum
 Since there are a checksum also in the upper layer, [[UDP]], [[TCP]], etc, the engineers of the [[IETF]] have take the decision of remove the checksum from the IPv6 datagram.
 It was removed from IPv4 to IPv6 also because the computation of the checksum, while it is easy to compute, must be repeated at each router ending in a non zero overhead.
-*** NO
-*
+*** No fragmentation
+IPv4 support fragmentation of the datagram (through the headers id, and offset), this is quite expensive to do in a router, basically when in IPv4 a router receive a datagram to big it split the fragment in smaller piece and forward them, then the datagram will be recomposed. 
+Since this operation is expensive especially on machine like home router, but also on professional level router, the engineers of [[IETF]] removed this option.
+When a router receive a datagram to big send an [[ICMP]] (i.e. datagram to big) message to the sender, then sender re-transmit the datagram using a smaller MTU.
+This work done on the end system is cheaper.
+*** No more Option
+*** The IPv6 datagram is smaller than IPv4
+** From IPv4 to IPv6
+This transition is quite difficult, the easiest way is to choice a day in which the whole internet will be powered off and do the upgrade, but this is quite problematic as solution.
