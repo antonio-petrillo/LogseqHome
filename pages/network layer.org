@@ -159,4 +159,4 @@ When a company acquire a block of IP address, usually they (the network engineer
 * [[NAT]]
 It is used to /slowdown the IP consumption/.
 * IPv6
-This new version use more bit that IPv4, hence it admit more IPs.
+This new version use more bit that IPv4, hence it admit a greater number of IPs.
