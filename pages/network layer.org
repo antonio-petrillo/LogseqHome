@@ -97,7 +97,8 @@ This field is used when the datagram reaches the destination.
 Specify which protocol should receive the data, for example the value ~6~ specify ~TCP~, ~17~ ~UDP~, and so on (see ~IANA Protocol Numbers 2016~).
 **** ~Checksum~ 16 bit
 The IP checksum is applied only to the header, essentially is equal to ((63847bd7-3bb8-4a68-abf6-4ff167421a32)) in [[UDP]].
-The checksum is computed as ~sum of 1 complement of each 8 byte in the header~, the router that receive the datagram re-compute the checksum an try to match to the stored one.
+The checksum is computed as ~sum of 1 complement of each 8 byte in the header~, the router that receive the datagram re-compute the checksum an try to match to the stored one
+Note that each router that receive the datagram must recompute the checksum before forwarding it, this because the ~TTL~ has changed.
 **** ~Source IP~ & ~Destination IP~
 When an host send a datagram it put the destination IP in the ~destination field~ and it's own IP in the ~source field~.
 **** ~Options~
@@ -162,11 +163,27 @@ It is used to /slowdown the IP consumption/.
 This new version use more bit that IPv4, hence it admit a greater number of IPs.
 ** Datagram Structure
 [[../assets/IPv6-datagram.png]]
-** ~Version~
+*** ~Version~
 Specify the version, i.e. ~IPv4~ or ~IPv6~
-** ~Traffic class~
+*** ~Traffic class~
 Similar to ~TOS~ type of service in IPv4.
 It can be used to give priority to some datagram.
-** ~Flow label~
+*** ~Flow label~
 In the RFCs for the IPv6 there is the elusive definition of ~flow~ of data, there is a debate on what is a stream or not.
-A guideline could be: /all the data that belong to a specific flow, like /
+A guideline could be: /all the data that belong to a specific flow, like a video, a file, etc.../
+*** ~Payload length~
+Selfexplanatory
+*** ~Next hdr~
+The protocol that will use the data in the payload.
+*** ~Hop limit~
+A new form of ~TTL~, each time a datagram go through a new host the hop limit is decreased, when reaches ~0~ the datagram is discarded.
+*** ~Source addr~ & ~Dest. addr~
+Selfexplanatory
+*** ~Data~
+The payload
+** Notes on IPv6
+*** No checksum
+Since there are a checksum also in the upper layer, [[UDP]], [[TCP]], etc, the engineers of the [[IETF]] have take the decision of remove the checksum from the IPv6 datagram.
+It was removed from IPv4 to IPv6 also because the computation of the checksum, while it is easy to compute, must be repeated at each router ending in a non zero overhead.
+*** NO
+*
