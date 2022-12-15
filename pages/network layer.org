@@ -157,5 +157,6 @@ It is a non-profit company that take care of assign IP's block (and also DNS roo
 * [[DHCP]]
 When a company acquire a block of IP address, usually they (the network engineer/manager) assign this IPs to the routers on the network, in some case also to some specific host, however it doesn't do it for every host, instead they place an DHCP Server on the router, then the DHCP protocol take care of assigns the IPs to the hosts.
 * [[NAT]]
-*
+It is used to /slowdown the IP consumption/.
 * IPv6
+This new version use more bit that IPv4, hence it admit more IPs.
