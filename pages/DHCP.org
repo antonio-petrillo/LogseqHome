@@ -1,2 +1,6 @@
-* #protocol, #networking, #[[network layer]]
+* #protocol, #networking, #[[network layer]], #zero-conf, #plug-and-play, #Client-Server
 * ~Dynamic Host Configuration Protocol~
+When a new host is connected to the network DHCP give them an unique IP address (unique in that subnet), it also send information about the ~subnet mask~ and the ~default gateway~ (the address).
+It's also possible to assign a so called ~static IP~ to a specific host, in other words when an host receive a static IP from DHCP in a network, _every time_ it connect to that network receive the same IP address.
+* DHCP server
+The server take care of assign an unique IP to the new host,
