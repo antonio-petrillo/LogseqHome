@@ -23,3 +23,7 @@ This message is used to accept one of the possible offers.
 The message is sended broadcast but now it contains the DHCP server id (basically the IP) and the transaction ID so the server can understand which host is accepting the offer (remember there could be multiple host that connect at the same time to the network).
 ** DHCP ~Ack~
 The server notify the client and know the client can use the newly assigned IP.
+** Extra
+DHCP offers an extra command to extend the lifetime of the connection.
+** Explore the source code
+At the following [[https://github.com/isc-projects/dhcp][link]] you can find a DHCP implementation open source.
