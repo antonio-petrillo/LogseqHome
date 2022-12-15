@@ -2,7 +2,16 @@
 * ~Dynamic Host Configuration Protocol~
 When a new host is connected to the network DHCP give them an unique IP address (unique in that subnet), it also send information about the ~subnet mask~ and the ~default gateway~ (the address).
 It's also possible to assign a so called ~static IP~ to a specific host, in other words when an host receive a static IP from DHCP in a network, _every time_ it connect to that network receive the same IP address.
-*
+* Overview
+[[../assets/dhcp-server-in-a-network.png]]
 * DHCP server
 The server take care of assign an unique IP to the new host.
 Usually it is installed in the router, but in more complex case like a big company with thousands of thousands of hosts or a guy obsessed with the cyber-security of the networks, it could be located on a dedicated machine, in this later case the router should be /acknowledged/ on where to find a DHCP server (~relay agent~).
+* DHCP communication
+[[../assets/DHCP-communication.png]]
+** DHCP ~Discover~
+A newly connected host send a ~DHCP request~ in particular it send a ~DHCP discover~ request, since it doesn't know the IP of the router and neither the IP of the DHCP server it send the request on the ~broadcast IP~ ~255.255.255.255~.
+on the port reserved to DHCP, aka the ~port 67~ (the request runs on [[UDP]]).
+Since an IP datagram require the IP address of the sender, in the offer is used the addres ~0.0.0.0~.
+** DHCP ~Offer~
+Once the server receive the ~discover~ request it send back an offer (he)
