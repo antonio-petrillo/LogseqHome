@@ -155,5 +155,5 @@ When a datagram is sended to ~255.255.255.255~ it is sended to all the hosts on 
 ~ICANN~ stands for ~Internet Corporation for Assigned Names and Numbers~.
 It is a non-profit company that take care of assign IP's block (and also DNS root server).
 * [[DHCP]]
-When a company acquire a block of IP address.
+When a company acquire a block of IP address, usually they (the network engineer/manager) assign this IPs to the routers on the network, in some case also to some specific host, however it doesn't do it for every host, instead they place an DHCP Server on the router, then the DHCP protocol take care of assigns the IPs to the hosts.
 * IPv6
