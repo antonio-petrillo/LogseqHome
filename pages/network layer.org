@@ -202,5 +202,6 @@ A less drastic solution is to use ~tunneling~, it's easy to explain with an exam
 Imagine a chain of router that want to communicate, say they are: A, B, C, D, E, F
 A, B, E, F works with IPv6
 C, D with IPv4
-When B want to send a message to E or F, it wrap its datagram in a IPv4 datagram and send it through C.
+When B want to send a message to E or F, it wrap its datagram in a IPv4 datagram, in this case the ~TOS~ is not an upper layer but IPv6, and send it through C.
+Then D send to E, E unpack the IPv6 datagram and proceed.
 #+END_EXAMPLE
