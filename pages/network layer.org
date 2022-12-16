@@ -207,4 +207,7 @@ Then D send to E, E unpack the IPv6 datagram and proceed.
 #+END_EXAMPLE
 * Generalized Forwarding and SDN.
 A generalized version of Forwarding can be imagined with a ~match-action~ system.
-When there is a ~match~ the system responde
+When there is a ~match~ the system responds with a specific ~action~.
+A ~match~ could be done on the headers of the packet (forward based on the destination), a load balancer, a firewall, and many more, the ~action~ could be the forwarding (as in forwarding based on the destination or the load balancer) or even the discard (as in a firewall that detect a malevolent packet).
+This kind of ~match-action~ could be implemented with a generalized version of the ~forwarding table~.
+The device that can do this kind of job work on ~network layer~ and ~data link~ layer, hence they are different from router, they are called ~packet switch~.
