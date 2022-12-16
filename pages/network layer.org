@@ -234,3 +234,10 @@ Here some of the most important action in ~openflow~:
 + ~dropping~ (useful in firewall)
 + ~modify-field~ (useful in NAT)
 ** Middlebox
+Every other system on a network that is not an endpoint ans also which does different things than a router is a ~middlebox~.
+In this category we can find:
++ NAT box
++ DPI firewall (Depp Packet Inspection)
++ IDS (Intrusion Detection System)
++ TCP splitter
++ WEB caching
