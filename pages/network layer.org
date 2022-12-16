@@ -215,4 +215,7 @@ The device that can do this kind of job work on ~network layer~ and ~data link~ 
 It is a protocol that introduced a lot of key features for the SDNs and the generalized forwarding, the book focus on ~openflow 1.0~
 As said before ~generalized forwarding~ is similar to a classic SDN, but the ~forwarding table~ is more comples (but still quite easy), in ~openflow~ it's called ~flow table~.
 Each table entry have the following column:
-+ A set of value of packet's header, this is used to match against a newly arrived package.
++ A set of value of packet's header, this is used to ~match~ against a newly arrived package, usually this part is implemented in hardware.
++ A set of ~counters~ that will update when a packets match one of the row of the ~flow table~, they also contain a /timestamp/ of the last update.
++ A set of ~action~  that will be executed after a ~match~ on the ~flow table~.
+*** Match
