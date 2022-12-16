@@ -211,4 +211,8 @@ When there is a ~match~ the system responds with a specific ~action~.
 A ~match~ could be done on the headers of the packet (forward based on the destination), a load balancer, a firewall, and many more, the ~action~ could be the forwarding (as in forwarding based on the destination or the load balancer) or even the discard (as in a firewall that detect a malevolent packet).
 This kind of ~match-action~ could be implemented with a generalized version of the ~forwarding table~.
 The device that can do this kind of job work on ~network layer~ and ~data link~ layer, hence they are different from router, they are called ~packet switch~.
-** Figure
+** ~Openflow~
+It is a protocol that introduced a lot of key features for the SDNs and the generalized forwarding, the book focus on ~openflow 1.0~
+As said before ~generalized forwarding~ is similar to a classic SDN, but the ~forwarding table~ is more comples (but still quite easy), in ~openflow~ it's called ~flow table~.
+Each table entry have the following column:
++ A set of value of packet's header, this is used to match against a newly arrived package.
