@@ -223,4 +223,13 @@ Each table entry have the following column:
 *** Match
 [[../assets/header-openflow-1.0.png]]
 Note that each row have also a priority value, when a packet match more than one packet openflow resolve using the match with greater priority.
-***
+*** Counters
+Self explanatory, they are used to modify priority value and stuff like that.
+*** Action
+:PROPERTIES:
+:id: 639c3de3-76ec-4ea5-97df-62c83d5d7124
+:END:
+Here some of the most important action in ~openflow~:
++ ~forwarding~ 
++ ~dropping~ (useful in firewall)
++ ~modify-field~ (useful in NAT)
